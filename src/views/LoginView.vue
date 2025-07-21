@@ -73,18 +73,34 @@ function onLoginSuccess(response){
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/authStore'
 
 // 暫存帳密
 const email = ref('')
 const password = ref('')
 const errorMsg = ref('')
+const authStore = useAuthStore()
+const router = useRouter()
 
 // 模擬登入
 function handleLogin() {
   if (email.value === 'test@example.com' && password.value === '123456') {
-    console.log('✅ 登入成功！')
-    console.log({ token: 'mock-token', role: 'user', user: { name: '測試用戶' } })
-    // 👉 此處可加入 authStore.login(...) 作後續接軌
+    // 模擬登入回傳資料
+    const mockResponse = {
+      token: 'mock-token',
+      role: 'Brand', // 或改成 'Brand' 試試看
+      user: { name: '測試用戶' },
+    }
+
+    authStore.login(mockResponse)
+
+    // 根據角色導頁
+    if (mockResponse.role === 'User') {
+      router.push('/user/dashboard')
+    } else if (mockResponse.role === 'Brand') {
+      router.push('/brand/dashboard')
+    }
   } else {
     errorMsg.value = '帳號或密碼錯誤'
   }
