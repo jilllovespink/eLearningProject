@@ -44,6 +44,7 @@ function onLoginSuccess(response){
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-xl shadow-md w-80">
       <h1 class="text-xl font-semibold mb-6 text-center">登入</h1>
+
       <form @submit.prevent="handleLogin" class="space-y-4">
         <input
           v-model="email"
@@ -83,26 +84,35 @@ const errorMsg = ref('')
 const authStore = useAuthStore()
 const router = useRouter()
 
-// 模擬登入
-function handleLogin() {
-  if (email.value === 'test@example.com' && password.value === '123456') {
-    // 模擬登入回傳資料
-    const mockResponse = {
-      token: 'mock-token',
-      role: 'Brand', // 或改成 'Brand' 試試看
-      user: { name: '測試用戶' },
+const handleLogin = async () => {
+errorMsg.value = "";
+  try {
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email.value, password: password.value }),
+    });
+
+
+    if (!res.ok) {
+    const errorData = await res.json().catch(() => null);
+      errorMsg.value = errorData?.error || "登入失敗，請檢查帳號密碼";
+      console.log('錯誤訊息：', errorMsg.value);
+      return;
     }
 
-    authStore.login(mockResponse)
-
-    // 根據角色導頁
-    if (mockResponse.role === 'User') {
-      router.push('/user/dashboard')
-    } else if (mockResponse.role === 'Brand') {
-      router.push('/brand/dashboard')
+    const data = await res.json();
+    authStore.login(data); // 寫入 pinia store
+    if (data.role === "User") {
+      router.push("/user/dashboard");
+    } else if (data.role === "Brand") {
+      router.push("/brand/dashboard");
     }
-  } else {
-    errorMsg.value = '帳號或密碼錯誤'
+  } catch (err) {
+    alert(err.message);
+    errorMsg.value = "登入失敗，請檢查帳號與密碼是否正確。";
   }
-}
+};
 </script>

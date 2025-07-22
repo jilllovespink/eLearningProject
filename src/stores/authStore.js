@@ -4,7 +4,13 @@ export const useAuthStore = defineStore("auth", {
   state: () => ({
     token: localStorage.getItem("token") || "",
     role: localStorage.getItem("role") || "",
-    user: JSON.parse(localStorage.getItem("user") || "{}"),
+    user: (() => {
+      try {
+        return JSON.parse(localStorage.getItem("user")) || null;
+      } catch (e) {
+        return null;
+      }
+    })(),
   }),
 
   actions: {
