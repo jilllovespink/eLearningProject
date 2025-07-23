@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "axios": "^1.11.0",
+    "axois": "^0.0.1-security",
     "miragejs": "^0.1.48",
     "pinia": "^3.0.3",
     "vue": "^3.5.17",

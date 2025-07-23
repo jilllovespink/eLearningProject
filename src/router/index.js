@@ -2,7 +2,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "@/stores/authStore";
 
-// 分別匯入前台／後台路由
 import frontRoutes from "./front";
 import userRoutes from "./user";
 import brandRoutes from "./brand";
@@ -26,7 +25,7 @@ const routes = [
     component: UnauthorizedView,
   },
   {
-    path: "register",
+    path: "/register",
     name: "Register",
     component: RegisterView,
   },

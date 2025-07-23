@@ -1,9 +1,9 @@
-const BaseLayout = () => import("@/layouts/BaseLayout.vue");
+const BrandLayout = () => import("@/layouts/BrandLayout.vue");
 
 export default [
   {
     path: "/brand/dashboard",
-    component: BaseLayout,
+    component: BrandLayout,
     meta: { requiresAuth: true, role: "Brand" },
     children: [
       {

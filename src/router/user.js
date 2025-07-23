@@ -1,9 +1,9 @@
-const BaseLayout = () => import("@/layouts/BaseLayout.vue");
+const UserLayout = () => import("@/layouts/UserLayout.vue");
 
 export default [
   {
     path: "/user/dashboard",
-    component: BaseLayout,
+    component: UserLayout,
     meta: { requiresAuth: true, role: "User" },
     children: [
       {
