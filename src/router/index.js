@@ -1,34 +1,45 @@
+// router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "@/stores/authStore";
 
-// 待補每個頁面的meta.title和description
-// 待補404頁面
+// 分別匯入前台／後台路由
+import frontRoutes from "./front";
+import userRoutes from "./user";
+import brandRoutes from "./brand";
+
+// 其他單獨路由
+const LoginView = () => import("@/views/LoginView.vue");
+const UnauthorizedView = () => import("@/views/UnauthorizedView.vue");
+const NotFoundView = () => import("@/views/NotFoundView.vue");
+const RegisterView = () => import("@/views/RegisterView.vue");
+
 const routes = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("@/views/LoginView.vue"),
+    component: LoginView,
     meta: { requiresAuth: false },
-  },
-  {
-    path: "/user/dashboard",
-    name: "UserDashboard",
-    component: () => import("@/views/userDashboardView.vue"),
-    meta: { requiresAuth: true, role: "User" },
-  },
-  {
-    path: "/brand/dashboard",
-    name: "BrandDashboard",
-    component: () => import("@/views/BrandDashboardView.vue"),
-    meta: { requiresAuth: true, role: "Brand" },
   },
   {
     path: "/unauthorized",
     name: "Unauthorized",
-    component: () => import("@/views/UnauthorizedView.vue"),
+    component: UnauthorizedView,
   },
-  // fallback功能
-  { path: "/:pathMatch(.*)*", redirect: "/login" },
+  {
+    path: "register",
+    name: "Register",
+    component: RegisterView,
+  },
+  // 合併各模組路由
+  ...frontRoutes,
+  ...userRoutes,
+  ...brandRoutes,
+  // fallback 404
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFoundView,
+  },
 ];
 
 const router = createRouter({
@@ -36,7 +47,7 @@ const router = createRouter({
   routes,
 });
 
-// 檢查使用者的訪問權限，導引至對應頁面
+// 路由守衛
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
 
