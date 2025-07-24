@@ -74,7 +74,7 @@ function onLoginSuccess(response){
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
 
 // 暫存帳密
@@ -83,6 +83,8 @@ const password = ref('')
 const errorMsg = ref('')
 const authStore = useAuthStore()
 const router = useRouter()
+const route = useRoute()
+
 
 const handleLogin = async () => {
 errorMsg.value = "";
@@ -99,17 +101,16 @@ errorMsg.value = "";
     if (!res.ok) {
     const errorData = await res.json().catch(() => null);
       errorMsg.value = errorData?.error || "登入失敗，請檢查帳號密碼";
-      console.log('錯誤訊息：', errorMsg.value);
       return;
     }
 
     const data = await res.json();
     authStore.login(data); // 寫入 pinia store
-    if (data.role === "User") {
-      router.push("/user/dashboard");
-    } else if (data.role === "Brand") {
-      router.push("/brand/dashboard");
-    }
+
+    const redirect = route.query.redirect || '/';
+router.push(redirect);
+
+
   } catch (err) {
     alert(err.message);
     errorMsg.value = "登入失敗，請檢查帳號與密碼是否正確。";
