@@ -8,13 +8,13 @@
       />
 
       <!-- Static links -->
-      <router-link to="/courses/latest" class="text-sm hover:text-purple-600"
+      <router-link to="/promotions" class="text-sm hover:text-purple-600"
         >課程套裝</router-link
       >
       <router-link to="/courses/" class="text-sm hover:text-purple-600"
         >所有課程</router-link
       >
-      <router-link to="/blog" class="text-sm hover:text-purple-600"
+      <router-link to="/articles" class="text-sm hover:text-purple-600"
         >部落格</router-link
       >
       <router-link to="/about" class="text-sm hover:text-purple-600"

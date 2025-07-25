@@ -11,6 +11,21 @@ export default [
         component: () => import("@/views/HomeView.vue"),
       },
       {
+        path: "about",
+        name: "About",
+        component: () => import("@/views/AboutView.vue"),
+      },
+      {
+        path: "promotions",
+        name: "Promotions",
+        component: () => import("@/views/PromotionView.vue"),
+      },
+      {
+        path: "/search",
+        name: "SearchResults",
+        component: () => import("@/views/SearchResultsView.vue"),
+      },
+      {
         path: "search",
         name: "SearchResults",
         component: () => import("@/views/SearchResultsView.vue"),
