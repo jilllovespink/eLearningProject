@@ -38,8 +38,7 @@ onMounted(async () => {
   courseCategories.value = res.data.categories
 })
 
-function goToCategory(id) {
-  router.push({ name: 'CoursesCategory', params: { categoryId: id } })
-  showExplore.value = false
+function goToCategory(item) {
+  router.push({ name: 'CoursesCategory', params: { categoryId: item.id } })
 }
 </script>
