@@ -23,30 +23,6 @@
         />
       </div>
 
-      <!-- Explore Dropdown -->
-      <div
-        class="relative"
-        @mouseenter="showExplore = true"
-        @mouseleave="showExplore = false"
-      >
-        <button class="text-sm font-medium">Explore</button>
-        <div
-          v-if="showExplore"
-          class="absolute bg-white shadow-lg mt-2 rounded p-3 w-60"
-        >
-          <ul>
-            <li
-              v-for="category in courseCategories"
-              :key="category.id"
-              class="hover:bg-gray-100 px-2 py-1 cursor-pointer"
-              @click="goToCategory(category.id)"
-            >
-              {{ category.name }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <div class="flex items-center space-x-6">
         <!-- 下拉選單 -->
         <div
