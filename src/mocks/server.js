@@ -27,9 +27,21 @@ const instructors = [
 
 // 假資料：課程分類
 const categories = [
-  { id: "c1", name: "數位行銷類" },
-  { id: "c2", name: "程式語言類" },
-  { id: "c3", name: "投資理財類" },
+  {
+    id: "c1",
+    name: "數位行銷類",
+    description: "這是關於數位行銷課的簡介段落。",
+  },
+  {
+    id: "c2",
+    name: "程式語言類",
+    description: "這是關於程式語言課的簡介段落。",
+  },
+  {
+    id: "c3",
+    name: "投資理財類",
+    description: "這是關於投資理財課的簡介段落。",
+  },
 ];
 
 // 假資料：課程列表（每門課只綁定 ID，詳細資訊用 route 補全）
@@ -39,7 +51,10 @@ const courses = [
     title: "社群媒體行銷策略入門",
     description:
       "學習如何規劃與執行有效的社群媒體行銷計畫，提升品牌曝光與互動。",
-    categoryId: "c1",
+    category: {
+      id: "c1",
+      name: "數位行銷類",
+    },
     instructorId: "a1",
     videos: [
       {
@@ -58,7 +73,10 @@ const courses = [
     id: "2",
     title: "內容行銷與文案撰寫技巧",
     description: "掌握內容行銷精髓與撰寫吸引人的文案技巧，讓行銷更具說服力。",
-    categoryId: "c1",
+    category: {
+      id: "c1",
+      name: "數位行銷類",
+    },
     instructorId: "a1",
     videos: [
       {
@@ -77,7 +95,10 @@ const courses = [
     id: "3",
     title: "SEO 優化實戰",
     description: "深入了解搜尋引擎運作，提升網站排名與自然流量。",
-    categoryId: "c1",
+    category: {
+      id: "c1",
+      name: "數位行銷類",
+    },
     instructorId: "a3",
     videos: [
       {
@@ -96,7 +117,10 @@ const courses = [
     id: "4",
     title: "品牌經營與數位廣告投放",
     description: "學習品牌塑造技巧與數位廣告操作，精準觸及目標客群。",
-    categoryId: "c1",
+    category: {
+      id: "c1",
+      name: "數位行銷類",
+    },
     instructorId: "a3",
     videos: [
       {
@@ -115,7 +139,10 @@ const courses = [
     id: "5",
     title: "JavaScript 基礎與應用",
     description: "從零開始學習 JavaScript，掌握網頁互動與動態效果開發。",
-    categoryId: "c2",
+    category: {
+      id: "c2",
+      name: "程式語言類",
+    },
     instructorId: "a2",
     videos: [
       {
@@ -134,7 +161,10 @@ const courses = [
     id: "6",
     title: "Python 程式設計入門",
     description: "介紹 Python 基本語法及常用函式，適合初學者入門。",
-    categoryId: "c2",
+    category: {
+      id: "c2",
+      name: "程式語言類",
+    },
     instructorId: "a4",
     videos: [
       {
@@ -153,7 +183,10 @@ const courses = [
     id: "7",
     title: "演算法與資料結構實作",
     description: "學習常見演算法與資料結構，強化程式設計能力。",
-    categoryId: "c2",
+    category: {
+      id: "c2",
+      name: "程式語言類",
+    },
     instructorId: "a4",
     videos: [
       {
@@ -172,7 +205,10 @@ const courses = [
     id: "8",
     title: "股市投資入門",
     description: "理解股市運作機制，掌握基礎投資策略與風險控管。",
-    categoryId: "c3",
+    category: {
+      id: "c3",
+      name: "投資理財類",
+    },
     instructorId: "a5",
     videos: [
       {
@@ -191,7 +227,10 @@ const courses = [
     id: "9",
     title: "基金與理財規劃",
     description: "學習基金種類及理財規劃技巧，提升資產增值能力。",
-    categoryId: "c3",
+    category: {
+      id: "c3",
+      name: "投資理財類",
+    },
     instructorId: "a5",
     videos: [
       {
@@ -212,6 +251,8 @@ export function makeServer() {
   createServer({
     models: {
       user: Model,
+      instructor: Model,
+      category: Model,
     },
 
     seeds(server) {
@@ -220,6 +261,9 @@ export function makeServer() {
           { email: "user@test.com", password: "123456", role: "User" },
           { email: "brand@test.com", password: "123456", role: "Brand" },
         ],
+        categories,
+        courses,
+        instructors,
       });
     },
 
@@ -234,7 +278,7 @@ export function makeServer() {
       // 單一課程（詳細資料，含講師與分類）
       this.get("/courses/:id", (schema, request) => {
         const { id } = request.params;
-        const course = courses.find((c) => c.id === id);
+        const course = schema.db.courses.find(id);
 
         if (!course) {
           return new Response(404, {}, { error: "Course not found" });
@@ -243,7 +287,11 @@ export function makeServer() {
         const instructor = instructors.find(
           (i) => i.id === course.instructorId
         );
-        const category = categories.find((cat) => cat.id === course.categoryId);
+
+        const categoryId = course.category?.id;
+        const category = categoryId
+          ? schema.db.categories.find(categoryId)
+          : null;
 
         return {
           course: {
@@ -257,7 +305,7 @@ export function makeServer() {
       // 單一講師
       this.get("/instructors/:id", (schema, request) => {
         const { id } = request.params;
-        const instructor = instructors.find((i) => i.id === id);
+        const instructor = schema.db.instructors.find(id);
 
         if (!instructor) {
           return new Response(404, {}, { error: "Instructor not found" });
@@ -266,9 +314,21 @@ export function makeServer() {
         return { instructor };
       });
 
-      // 所有分類
-      this.get("/categories", () => {
-        return { categories };
+      this.get("/categories", (schema) => {
+        return {
+          categories: schema.db.categories,
+        };
+      });
+      // 分類
+      this.get("/categories/:id", (schema, request) => {
+        const { id } = request.params;
+        const category = schema.db.categories.find(id);
+
+        if (!category) {
+          return new Response(404, {}, { error: "Category not found" });
+        }
+
+        return { category };
       });
 
       // 模擬登入

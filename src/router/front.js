@@ -21,8 +21,8 @@ export default [
         component: () => import("@/views/CoursesView.vue"),
       },
       {
-        path: "courses/category/:categoryId",
-        name: "CoursesCategory",
+        path: "courses/categories/:id",
+        name: "CoursesCategories",
         component: () => import("@/views/CoursesCategory.vue"),
       },
       {

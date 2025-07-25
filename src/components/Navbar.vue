@@ -39,6 +39,6 @@ onMounted(async () => {
 })
 
 function goToCategory(item) {
-  router.push({ name: 'CoursesCategory', params: { categoryId: item.id } })
+  router.push({ name: 'CoursesCategories', params: { id: item.id } })
 }
 </script>
