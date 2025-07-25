@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <Header />
+    <SmartHeader />
 
     <div class="flex flex-1">
-      <Sidebar />
+      <SmartSidebar />
       <main class="flex-1 p-6 bg-gray-50">
         <slot />
       </main>
@@ -12,6 +12,6 @@
 </template>
 
 <script setup>
-import Header from '@/components/Header/HeaderUser.vue'
-import Sidebar from '@/components/Sidebar.vue'
+import SmartHeader from '@/components/Header/SmartHeader.vue'
+import SmartSidebar from '@/components/Sidebar/SmartSidebar.vue'
 </script>

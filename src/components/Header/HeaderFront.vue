@@ -3,10 +3,14 @@
     <div
       class="flex items-center justify-between px-6 py-3 max-w-screen-xl mx-auto"
     >
-      <!-- Logo
+      <!-- Logo -->
       <router-link to="/" class="text-xl font-bold text-purple-600">
-        <img src="/logo.png" alt="Logo" class="h-6 inline-block" />
-      </router-link> -->
+        <img
+          src="https://i.ibb.co/zdvz158/Screenshot-2025-07-24-161321.png"
+          alt="Logo"
+          class="h-6 inline-block"
+        />
+      </router-link>
 
       <!-- Search -->
       <div class="flex-1 px-6">

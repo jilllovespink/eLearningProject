@@ -29,9 +29,7 @@
       <router-link to="/courses/latest" class="text-sm hover:text-purple-600"
         >課程套裝</router-link
       >
-      <router-link
-        to="/courses/recommended"
-        class="text-sm hover:text-purple-600"
+      <router-link to="/courses/" class="text-sm hover:text-purple-600"
         >推薦課程</router-link
       >
       <router-link to="/blog" class="text-sm hover:text-purple-600"
