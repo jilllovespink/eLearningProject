@@ -64,7 +64,6 @@ const { value: password, errorMessage: passwordError, meta: passwordMeta } = use
 const emit = defineEmits(['submit'])
 
 const submitForm = handleSubmit((formData) => {
-      console.log('送出表單:', formData)  // ✅ 測試用
 
   emit('submit', formData)
 })

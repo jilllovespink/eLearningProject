@@ -75,7 +75,7 @@ function handleMouseLeave() {
   if (isDesktop.value) {
     hideTimeout = setTimeout(() => {
       show.value = false
-    }, 500)
+    }, 200)
   }
 }
 

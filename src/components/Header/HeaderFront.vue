@@ -1,33 +1,33 @@
 <template>
   <header class="bg-white shadow sticky top-0 z-50">
     <div
-      class="flex items-center justify-between px-6 py-3 max-w-screen-xl mx-auto"
+      class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3"
     >
       <!-- Logo -->
-      <router-link to="/" class="text-xl font-bold text-purple-600">
-        <img
-          src="https://i.ibb.co/zdvz158/Screenshot-2025-07-24-161321.png"
-          alt="Logo"
-          class="h-6 inline-block"
-        />
+      <router-link to="/" class="text-2xl font-bold text-blue-600">
+        Skill<span class="text-black">Hub</span>
       </router-link>
 
       <!-- Search -->
-      <div class="flex-1 px-6">
+      <div class="hidden md:block flex-1 mx-6">
         <input
           type="text"
           v-model="searchQuery"
           @keyup.enter="submitSearch"
-          class="w-full border border-gray-300 rounded-full px-4 py-2 text-sm"
-          placeholder="搜尋課程、講師或文章"
+          class="w-full border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Search courses, instructors, topics..."
         />
       </div>
 
       <!-- User -->
-      <div class="flex items-center space-x-4">
-        <router-link to="/login" class="text-sm font-medium">登入</router-link>
-        <router-link to="/register" class="text-sm font-medium text-purple-600"
-          >註冊</router-link
+      <div class="space-x-3 flex items-center">
+        <router-link to="/login" class="text-sm font-medium text-gray-700"
+          >Login</router-link
+        >
+        <router-link
+          to="/register"
+          class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+          >Register</router-link
         >
       </div>
     </div>
