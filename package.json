@@ -13,6 +13,7 @@
     "@vee-validate/yup": "^4.15.1",
     "axios": "^1.11.0",
     "axois": "^0.0.1-security",
+    "lucide-vue-next": "^0.526.0",
     "miragejs": "^0.1.48",
     "pinia": "^3.0.3",
     "vee-validate": "^4.15.1",

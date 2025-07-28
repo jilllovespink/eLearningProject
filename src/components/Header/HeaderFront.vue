@@ -4,12 +4,12 @@
       class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3"
     >
       <!-- Logo -->
-      <router-link to="/" class="text-2xl font-bold text-blue-600">
-        Skill<span class="text-black">Hub</span>
+      <router-link to="/" class="text-2xl font-bold text-black">
+        Learning<span class="text-blue-600">@</span>
       </router-link>
 
       <!-- Search -->
-      <div class="hidden md:block flex-1 mx-6">
+      <div class="flex-1 mx-2 max-w-md">
         <input
           type="text"
           v-model="searchQuery"
@@ -21,7 +21,9 @@
 
       <!-- User -->
       <div class="space-x-3 flex items-center">
-        <router-link to="/login" class="text-sm font-medium text-gray-700"
+        <router-link
+          to="/login"
+          class="text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 transition"
           >Login</router-link
         >
         <router-link

@@ -5,7 +5,7 @@
     @mouseleave="handleMouseLeave"
   >
     <button
-      class="text-sm font-medium hover:text-purple-600"
+      class="text-sm font-medium hover:text-biue-600 px-2 py-1 rounded transition-colors"
       @click="!isDesktop && (show = !show)"
     >
       {{ label }} ▼
@@ -14,14 +14,14 @@
     <div
       v-if="show"
       ref="dropdownRef"
-      class="absolute left-0 top-full mt-2 bg-white shadow rounded p-2 min-w-[160px] z-20"
+      class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 min-w-[180px] z-50"
     >
       <ul>
         <li
           v-for="item in items"
           :key="item.id"
           @click="handleClick(item)"
-          class="px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded cursor-pointer"
         >
           {{ item.name }}
         </li>
