@@ -1,7 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <SmartHeader />
-    <Navbar />
 
     <main class="flex-1">
       <router-view />

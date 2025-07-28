@@ -33,12 +33,15 @@
         >
       </div>
     </div>
+    <Navbar />
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import Navbar from '../Navbar.vue'
+
 
 const searchQuery = ref('')
 const router = useRouter()

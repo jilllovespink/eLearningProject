@@ -1,7 +1,7 @@
 <template>
-  <nav class="bg-white shadow-sm relative">
+  <nav class="bg-gray-100 sticky top-0 border-b border-gray-200 z-40">
     <div
-      class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between"
+      class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-center relative"
     >
       <div class="hidden md:flex items-center space-x-6 text-sm">
         <DropdownMenu
@@ -25,7 +25,7 @@
         >
       </div>
       <!-- Mobile toggle -->
-      <div class="relative md:hidden">
+      <div class="absolute left-4 md:hidden">
         <button
           @click="toggleMenu"
           class="p-2 rounded-md hover:bg-gray-200 transition"
@@ -45,7 +45,7 @@
 
 <script setup>
 import DropdownMenu from '@/components/DropdownMenu.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 import { Menu as MenuIcon } from 'lucide-vue-next'
@@ -68,4 +68,17 @@ function goToCategory(item) {
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+function handleResize() {
+  if (window.innerWidth >= 768 && isMenuOpen.value) {
+    isMenuOpen.value = false
+  }
+}
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
