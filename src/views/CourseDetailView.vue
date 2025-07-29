@@ -1,17 +1,16 @@
 <template>
   <div v-if="course">
-    <h1>{{ course.title }}</h1>
+    <h1>{{ course.name }}</h1>
     <p>{{ course.description }}</p>
 
-    <section v-if="course.instructor">
-      <h2>講師介紹</h2>
-      <router-link
+    <h2>講師介紹</h2>
+    <!-- <router-link
         :to="{ name: 'InstructorDetailView', params: { id: course.instructor.id } }"
-      >
-        {{ course.instructor.name }}
-      </router-link>
-      <p>{{ course.instructor.bio }}</p>
-    </section>
+      > -->
+    <p>{{ course.instructor }}</p>
+    <!-- </router-link> -->
+    <!-- <p>{{ course.instructor.bio }}</p> -->
+    <!-- </section> -->
   </div>
   <div v-else class="text-center text-gray-500 py-10">載入中...</div>
 </template>
