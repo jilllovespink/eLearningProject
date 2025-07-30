@@ -1,0 +1,622 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "社群媒體行銷策略入門",
+      "description": "學習如何規劃與執行有效的社群媒體行銷計畫，提升品牌曝光與互動。",
+      "category": {
+        "id": "c1",
+        "name": "數位行銷類"
+      },
+      "instructorId": "a1",
+      "videos": [
+        {
+          "id": "v1",
+          "title": "課程介紹",
+          "url": "https://www.youtube.com/embed/sample1"
+        },
+        {
+          "id": "v2",
+          "title": "社群平台分析",
+          "url": "https://www.youtube.com/embed/sample2"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "內容行銷與文案撰寫技巧",
+      "description": "掌握內容行銷精髓與撰寫吸引人的文案技巧，讓行銷更具說服力。",
+      "category": {
+        "id": "c1",
+        "name": "數位行銷類"
+      },
+      "instructorId": "a1",
+      "videos": [
+        {
+          "id": "v3",
+          "title": "內容策略制定",
+          "url": "https://www.youtube.com/embed/sample3"
+        },
+        {
+          "id": "v4",
+          "title": "文案寫作技巧",
+          "url": "https://www.youtube.com/embed/sample4"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "SEO 優化實戰",
+      "description": "深入了解搜尋引擎運作，提升網站排名與自然流量。",
+      "category": {
+        "id": "c1",
+        "name": "數位行銷類"
+      },
+      "instructorId": "a3",
+      "videos": [
+        {
+          "id": "v5",
+          "title": "SEO 基礎",
+          "url": "https://www.youtube.com/embed/sample5"
+        },
+        {
+          "id": "v6",
+          "title": "關鍵字策略",
+          "url": "https://www.youtube.com/embed/sample6"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "品牌經營與數位廣告投放",
+      "description": "學習品牌塑造技巧與數位廣告操作，精準觸及目標客群。",
+      "category": {
+        "id": "c1",
+        "name": "數位行銷類"
+      },
+      "instructorId": "a3",
+      "videos": [
+        {
+          "id": "v7",
+          "title": "品牌策略",
+          "url": "https://www.youtube.com/embed/sample7"
+        },
+        {
+          "id": "v8",
+          "title": "廣告投放實務",
+          "url": "https://www.youtube.com/embed/sample8"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "JavaScript 基礎與應用",
+      "description": "從零開始學習 JavaScript，掌握網頁互動與動態效果開發。",
+      "category": {
+        "id": "c2",
+        "name": "程式語言類"
+      },
+      "instructorId": "a2",
+      "videos": [
+        {
+          "id": "v9",
+          "title": "JS 語法基礎",
+          "url": "https://www.youtube.com/embed/sample9"
+        },
+        {
+          "id": "v10",
+          "title": "DOM 操作",
+          "url": "https://www.youtube.com/embed/sample10"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Python 程式設計入門",
+      "description": "介紹 Python 基本語法及常用函式，適合初學者入門。",
+      "category": {
+        "id": "c2",
+        "name": "程式語言類"
+      },
+      "instructorId": "a4",
+      "videos": [
+        {
+          "id": "v11",
+          "title": "Python 基礎",
+          "url": "https://www.youtube.com/embed/sample11"
+        },
+        {
+          "id": "v12",
+          "title": "資料結構",
+          "url": "https://www.youtube.com/embed/sample12"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "演算法與資料結構實作",
+      "description": "學習常見演算法與資料結構，強化程式設計能力。",
+      "category": {
+        "id": "c2",
+        "name": "程式語言類"
+      },
+      "instructorId": "a4",
+      "videos": [
+        {
+          "id": "v13",
+          "title": "排序演算法",
+          "url": "https://www.youtube.com/embed/sample13"
+        },
+        {
+          "id": "v14",
+          "title": "樹與圖",
+          "url": "https://www.youtube.com/embed/sample14"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "股市投資入門",
+      "description": "理解股市運作機制，掌握基礎投資策略與風險控管。",
+      "category": {
+        "id": "c3",
+        "name": "投資理財類"
+      },
+      "instructorId": "a5",
+      "videos": [
+        {
+          "id": "v15",
+          "title": "股市基礎",
+          "url": "https://www.youtube.com/embed/sample15"
+        },
+        {
+          "id": "v16",
+          "title": "投資組合管理",
+          "url": "https://www.youtube.com/embed/sample16"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "基金與理財規劃",
+      "description": "學習基金種類及理財規劃技巧，提升資產增值能力。",
+      "category": {
+        "id": "c3",
+        "name": "投資理財類"
+      },
+      "instructorId": "a5",
+      "videos": [
+        {
+          "id": "v17",
+          "title": "基金介紹",
+          "url": "https://www.youtube.com/embed/sample17"
+        },
+        {
+          "id": "v18",
+          "title": "理財規劃",
+          "url": "https://www.youtube.com/embed/sample18"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "攝影構圖與光影技巧",
+      "description": "學習攝影的基本構圖、曝光與打光技巧，提升照片質感。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a6",
+      "videos": [
+        {
+          "id": "v19",
+          "title": "構圖原則",
+          "url": "https://www.youtube.com/embed/sample19"
+        },
+        {
+          "id": "v20",
+          "title": "光線運用",
+          "url": "https://www.youtube.com/embed/sample20"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "數位插畫設計入門",
+      "description": "從零開始學會使用繪圖軟體創作自己的插畫作品。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a7",
+      "videos": [
+        {
+          "id": "v21",
+          "title": "插畫工具介紹",
+          "url": "https://www.youtube.com/embed/sample21"
+        },
+        {
+          "id": "v22",
+          "title": "角色設計實作",
+          "url": "https://www.youtube.com/embed/sample22"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "日常花藝設計",
+      "description": "學習插花技巧與配色美學，打造屬於自己的桌上花園。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a8",
+      "videos": [
+        {
+          "id": "v23",
+          "title": "插花基本型",
+          "url": "https://www.youtube.com/embed/sample23"
+        },
+        {
+          "id": "v24",
+          "title": "色彩搭配",
+          "url": "https://www.youtube.com/embed/sample24"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "素描基礎技巧",
+      "description": "從線條到陰影，掌握素描基本功與形體觀察。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a9",
+      "videos": [
+        {
+          "id": "v25",
+          "title": "素描工具與練習",
+          "url": "https://www.youtube.com/embed/sample25"
+        },
+        {
+          "id": "v26",
+          "title": "光影練習",
+          "url": "https://www.youtube.com/embed/sample26"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "電腦繪圖設計入門",
+      "description": "學會使用電繪軟體如 Photoshop 或 Procreate 進行圖像創作。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a7",
+      "videos": [
+        {
+          "id": "v27",
+          "title": "軟體介面介紹",
+          "url": "https://www.youtube.com/embed/sample27"
+        },
+        {
+          "id": "v28",
+          "title": "上色技巧",
+          "url": "https://www.youtube.com/embed/sample28"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "油畫初探：色彩與技法",
+      "description": "探索油畫顏料的使用與經典畫風的基礎技法。",
+      "category": {
+        "id": "c4",
+        "name": "藝術人文類"
+      },
+      "instructorId": "a9",
+      "videos": [
+        {
+          "id": "v29",
+          "title": "調色與構圖",
+          "url": "https://www.youtube.com/embed/sample29"
+        },
+        {
+          "id": "v30",
+          "title": "厚塗技法",
+          "url": "https://www.youtube.com/embed/sample30"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "法文基礎發音與日常會話",
+      "description": "掌握法文字母發音與常用生活對話，打好語言基礎。",
+      "category": {
+        "id": "c5",
+        "name": "語言學習類"
+      },
+      "instructorId": "a10",
+      "videos": [
+        {
+          "id": "v31",
+          "title": "法文字母與音標",
+          "url": "https://www.youtube.com/embed/sample31"
+        },
+        {
+          "id": "v32",
+          "title": "日常問候與自我介紹",
+          "url": "https://www.youtube.com/embed/sample32"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "韓文入門：字母與基本句型",
+      "description": "學習韓文字母與常見句型，開啟韓語學習之旅。",
+      "category": { "id": "c5", "name": "語言學習類" },
+      "instructorId": "a11",
+      "videos": [
+        {
+          "id": "v33",
+          "title": "韓文字母介紹",
+          "url": "https://www.youtube.com/embed/sample33"
+        },
+        {
+          "id": "v34",
+          "title": "日常對話範例",
+          "url": "https://www.youtube.com/embed/sample34"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "日文五十音與旅遊會話",
+      "description": "快速掌握日文五十音與常見旅遊用語。",
+      "category": { "id": "c5", "name": "語言學習類" },
+      "instructorId": "a12",
+      "videos": [
+        {
+          "id": "v35",
+          "title": "五十音平假名篇",
+          "url": "https://www.youtube.com/embed/sample35"
+        },
+        {
+          "id": "v36",
+          "title": "點餐與購物用語",
+          "url": "https://www.youtube.com/embed/sample36"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "義大利語初級文法",
+      "description": "從基本文法開始，建立義大利語閱讀與造句能力。",
+      "category": { "id": "c5", "name": "語言學習類" },
+      "instructorId": "a13",
+      "videos": [
+        {
+          "id": "v37",
+          "title": "名詞與冠詞變化",
+          "url": "https://www.youtube.com/embed/sample37"
+        },
+        {
+          "id": "v38",
+          "title": "動詞變化入門",
+          "url": "https://www.youtube.com/embed/sample38"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "法語進階會話練習",
+      "description": "透過情境模擬與聽力訓練，提升法語口語能力。",
+      "category": { "id": "c5", "name": "語言學習類" },
+      "instructorId": "a10",
+      "videos": [
+        {
+          "id": "v39",
+          "title": "法語聽力練習",
+          "url": "https://www.youtube.com/embed/sample39"
+        },
+        {
+          "id": "v40",
+          "title": "情境角色扮演",
+          "url": "https://www.youtube.com/embed/sample40"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "title": "日韓文化與語言比較",
+      "description": "透過文化背景理解語言差異，提升跨文化溝通能力。",
+      "category": { "id": "c5", "name": "語言學習類" },
+      "instructorId": "a11",
+      "videos": [
+        {
+          "id": "v41",
+          "title": "文化差異簡介",
+          "url": "https://www.youtube.com/embed/sample41"
+        },
+        {
+          "id": "v42",
+          "title": "語言結構比較",
+          "url": "https://www.youtube.com/embed/sample42"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "title": "數據分析在行銷中的應用",
+      "description": "學習如何透過數據洞察來優化行銷決策。",
+      "category": { "id": "c1", "name": "數位行銷類" },
+      "instructorId": "a14",
+      "videos": [
+        {
+          "id": "v43",
+          "title": "行銷數據來源",
+          "url": "https://www.youtube.com/embed/sample43"
+        },
+        {
+          "id": "v44",
+          "title": "數據儀表板工具",
+          "url": "https://www.youtube.com/embed/sample44"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "title": "電子報與行銷自動化",
+      "description": "了解如何設計有效的電子報與自動行銷流程。",
+      "category": { "id": "c1", "name": "數位行銷類" },
+      "instructorId": "a1",
+      "videos": [
+        {
+          "id": "v45",
+          "title": "Email 工具介紹",
+          "url": "https://www.youtube.com/embed/sample45"
+        },
+        {
+          "id": "v46",
+          "title": "行銷自動化範例",
+          "url": "https://www.youtube.com/embed/sample46"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "title": "社群內容企劃與短影音製作",
+      "description": "學習如何製作吸睛短影片並提升社群參與度。",
+      "category": { "id": "c1", "name": "數位行銷類" },
+      "instructorId": "a3",
+      "videos": [
+        {
+          "id": "v47",
+          "title": "短影片腳本撰寫",
+          "url": "https://www.youtube.com/embed/sample47"
+        },
+        {
+          "id": "v48",
+          "title": "手機剪輯技巧",
+          "url": "https://www.youtube.com/embed/sample48"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "title": "前端框架 Vue.js 入門",
+      "description": "學習 Vue 基本概念與實作，適合初學者快速上手。",
+      "category": { "id": "c2", "name": "程式語言類" },
+      "instructorId": "a2",
+      "videos": [
+        {
+          "id": "v49",
+          "title": "Vue 組件與資料綁定",
+          "url": "https://www.youtube.com/embed/sample49"
+        },
+        {
+          "id": "v50",
+          "title": "事件與條件渲染",
+          "url": "https://www.youtube.com/embed/sample50"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Git 與版本控制實務",
+      "description": "學會 Git 基本操作與多人協作流程，提升開發效率。",
+      "category": { "id": "c2", "name": "程式語言類" },
+      "instructorId": "a2",
+      "videos": [
+        {
+          "id": "v51",
+          "title": "Git 基礎指令",
+          "url": "https://www.youtube.com/embed/sample51"
+        },
+        {
+          "id": "v52",
+          "title": "合併與分支管理",
+          "url": "https://www.youtube.com/embed/sample52"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Python 資料視覺化入門",
+      "description": "使用 Python 工具繪製數據圖表與視覺化報告。",
+      "category": { "id": "c2", "name": "程式語言類" },
+      "instructorId": "a4",
+      "videos": [
+        {
+          "id": "v53",
+          "title": "使用 Matplotlib",
+          "url": "https://www.youtube.com/embed/sample53"
+        },
+        {
+          "id": "v54",
+          "title": "繪製折線與長條圖",
+          "url": "https://www.youtube.com/embed/sample54"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "title": "ETF 投資策略入門",
+      "description": "了解 ETF 運作與投資組合配置，適合長期投資者。",
+      "category": { "id": "c3", "name": "投資理財類" },
+      "instructorId": "a15",
+      "videos": [
+        {
+          "id": "v55",
+          "title": "ETF 是什麼？",
+          "url": "https://www.youtube.com/embed/sample55"
+        },
+        {
+          "id": "v56",
+          "title": "建立個人投資組合",
+          "url": "https://www.youtube.com/embed/sample56"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "title": "退休理財與風險管理",
+      "description": "規劃未來財務生活，掌握穩健的退休儲備策略。",
+      "category": { "id": "c3", "name": "投資理財類" },
+      "instructorId": "a15",
+      "videos": [
+        {
+          "id": "v57",
+          "title": "退休金來源與估算",
+          "url": "https://www.youtube.com/embed/sample57"
+        },
+        {
+          "id": "v58",
+          "title": "風險控管工具",
+          "url": "https://www.youtube.com/embed/sample58"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "小資族理財實戰課",
+      "description": "針對收入有限者的理財策略與資金管理技巧。",
+      "category": { "id": "c3", "name": "投資理財類" },
+      "instructorId": "a5",
+      "videos": [
+        {
+          "id": "v59",
+          "title": "預算規劃技巧",
+          "url": "https://www.youtube.com/embed/sample59"
+        },
+        {
+          "id": "v60",
+          "title": "儲蓄與負債管理",
+          "url": "https://www.youtube.com/embed/sample60"
+        }
+      ]
+    }
+  ]
+}

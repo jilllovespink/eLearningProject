@@ -18,6 +18,8 @@
 import { ref, onMounted } from 'vue';
 import CourseCard from '@/components/CourseCard.vue';
 import { useRouter } from 'vue-router';
+import { getAllCourses } from '@/services/firebaseCourseService'
+
 
 
 const courses = ref([])
@@ -25,9 +27,7 @@ const router = useRouter();
 
 
 onMounted(async () => {
-  const res = await fetch('/api/courses')
-  const data = await res.json()
-  courses.value = data.courses
+  courses.value = await getAllCourses()
 });
 
 function goToCourseDetail(id){
