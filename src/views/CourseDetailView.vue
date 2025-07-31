@@ -3,14 +3,14 @@
     <h1>{{ course.title }}</h1>
     <p>{{ course.description }}</p>
 
-    <section v-if="course.instructor">
+    <section v-if="instructor">
       <h2>講師介紹</h2>
       <router-link
-        :to="{ name: 'InstructorDetailView', params: { id: course.instructor.id } }"
+        :to="{ name: 'InstructorDetailView', params: { id: course.instructorId } }"
       >
-        {{ course.instructor.name }}
+        {{ instructor.name }}
       </router-link>
-      <p>{{ course.instructor.bio }}</p>
+      <p>{{ instructor.bio }}</p>
     </section>
   </div>
   <div v-else class="text-center text-gray-500 py-10">載入中...</div>
@@ -19,17 +19,37 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { database } from "@/services/firebase";
+import { ref as dbRef, get } from "firebase/database";
 
 const course = ref(null);
 const route = useRoute();
+const instructor = ref(null);
+
 
 onMounted(async () => {
-  const id = route.params.id;
+  const courseId = route.params.id;
 
   try {
-  const res = await fetch(`/api/courses/${id}`);
-  const data = await res.json();
-  course.value = data.course;
+  const courseSnap = await get(dbRef(database, `courses/${courseId}`));
+    if (courseSnap.exists()) {
+      course.value = courseSnap.val();
+// 如果有講師 ID，讀取講師資料
+
+      const instructorId = course.value.instructorId;
+      if (instructorId) {
+        const instructorSnap = await get(
+          dbRef(database, `instructors/${instructorId}`)
+        );
+        if (instructorSnap.exists()) {
+          instructor.value = instructorSnap.val();
+        }else {
+          console.warn(`找不到講師 ID 為 ${instructorId} 的資料`);
+      }}
+    }else {
+      console.warn(`找不到課程 ID 為 ${courseId} 的資料`);
+    }
+
   } catch(error){
         console.error("讀取課程失敗", error);
   }

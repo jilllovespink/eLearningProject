@@ -4,6 +4,11 @@
   >
     <h2 class="text-xl font-semibold mb-2">{{ course.title }}</h2>
     <p class="text-gray-600">{{ course.description }}</p>
+    <img
+      :src="course.imgURL"
+      :alt="course.title"
+      class="w-full h-48 object-cover rounded mb-4"
+    />
   </div>
 </template>
 

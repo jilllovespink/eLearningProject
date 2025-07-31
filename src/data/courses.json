@@ -1,9 +1,9 @@
 {
-  "courses": [
-    {
-      "id": "1",
-      "title": "社群媒體行銷策略入門",
-      "description": "學習如何規劃與執行有效的社群媒體行銷計畫，提升品牌曝光與互動。",
+  "courses": {
+    "social-media-marketing-basics": {
+      "title": "Introduction to Social Media Marketing Strategies",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course01.jpg?alt=media&token=2749c7b9-5182-405e-91ec-c8a158983747",
+      "description": "Learn how to plan and execute effective social media marketing campaigns to boost brand exposure and engagement.",
       "category": {
         "id": "c1",
         "name": "數位行銷類"
@@ -12,20 +12,20 @@
       "videos": [
         {
           "id": "v1",
-          "title": "課程介紹",
+          "title": "Course Introduction",
           "url": "https://www.youtube.com/embed/sample1"
         },
         {
           "id": "v2",
-          "title": "社群平台分析",
+          "title": "Social Media Platform Analysis",
           "url": "https://www.youtube.com/embed/sample2"
         }
       ]
     },
-    {
-      "id": "2",
-      "title": "內容行銷與文案撰寫技巧",
-      "description": "掌握內容行銷精髓與撰寫吸引人的文案技巧，讓行銷更具說服力。",
+    "content-marketing-copywriting": {
+      "title": "Content Marketing and Copywriting Techniques",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course02.jpg?alt=media&token=0dc4f750-f877-4296-a2fd-8d0979192dea",
+      "description": "Master the essence of content marketing and persuasive copywriting skills to enhance marketing effectiveness.",
       "category": {
         "id": "c1",
         "name": "數位行銷類"
@@ -34,20 +34,20 @@
       "videos": [
         {
           "id": "v3",
-          "title": "內容策略制定",
+          "title": "Content Strategy Planning",
           "url": "https://www.youtube.com/embed/sample3"
         },
         {
           "id": "v4",
-          "title": "文案寫作技巧",
+          "title": "Copywriting Skills",
           "url": "https://www.youtube.com/embed/sample4"
         }
       ]
     },
-    {
-      "id": "3",
-      "title": "SEO 優化實戰",
-      "description": "深入了解搜尋引擎運作，提升網站排名與自然流量。",
+    "seo-practical-guide": {
+      "title": "Hands-on SEO Optimization",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course03.jpg?alt=media&token=8bde7508-1c96-492d-8b8e-6c1ff737750f",
+      "description": "Gain in-depth understanding of how search engines work and improve website rankings and organic traffic.",
       "category": {
         "id": "c1",
         "name": "數位行銷類"
@@ -56,20 +56,20 @@
       "videos": [
         {
           "id": "v5",
-          "title": "SEO 基礎",
+          "title": "SEO Basics",
           "url": "https://www.youtube.com/embed/sample5"
         },
         {
           "id": "v6",
-          "title": "關鍵字策略",
+          "title": "Keyword Strategy",
           "url": "https://www.youtube.com/embed/sample6"
         }
       ]
     },
-    {
-      "id": "4",
-      "title": "品牌經營與數位廣告投放",
-      "description": "學習品牌塑造技巧與數位廣告操作，精準觸及目標客群。",
+    "branding-digital-ads": {
+      "title": "Brand Management and Digital Advertising",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course04.jpg?alt=media&token=b8f799d1-1bb8-4d0f-a888-ec1bc7e862da",
+      "description": "Learn brand-building skills and digital ad operations to effectively reach target audiences.",
       "category": {
         "id": "c1",
         "name": "數位行銷類"
@@ -78,20 +78,20 @@
       "videos": [
         {
           "id": "v7",
-          "title": "品牌策略",
+          "title": "Brand Strategy",
           "url": "https://www.youtube.com/embed/sample7"
         },
         {
           "id": "v8",
-          "title": "廣告投放實務",
+          "title": "Advertising Practice",
           "url": "https://www.youtube.com/embed/sample8"
         }
       ]
     },
-    {
-      "id": "5",
-      "title": "JavaScript 基礎與應用",
-      "description": "從零開始學習 JavaScript，掌握網頁互動與動態效果開發。",
+    "javascript-basics-applications": {
+      "title": "JavaScript Basics and Applications",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course05.jpg?alt=media&token=8b5debbd-55a2-4616-93f0-2ab8171d70b6",
+      "description": "Learn JavaScript from scratch and master interactive and dynamic web development.",
       "category": {
         "id": "c2",
         "name": "程式語言類"
@@ -100,20 +100,20 @@
       "videos": [
         {
           "id": "v9",
-          "title": "JS 語法基礎",
+          "title": "JavaScript Syntax Basics",
           "url": "https://www.youtube.com/embed/sample9"
         },
         {
           "id": "v10",
-          "title": "DOM 操作",
+          "title": "DOM Manipulation",
           "url": "https://www.youtube.com/embed/sample10"
         }
       ]
     },
-    {
-      "id": "6",
-      "title": "Python 程式設計入門",
-      "description": "介紹 Python 基本語法及常用函式，適合初學者入門。",
+    "python-programming-intro": {
+      "title": "Introduction to Python Programming",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course06.jpg?alt=media&token=d3a6dfa1-f785-4a36-b649-2285c428d264",
+      "description": "Learn the basic syntax and commonly used functions in Python, ideal for beginners.",
       "category": {
         "id": "c2",
         "name": "程式語言類"
@@ -122,20 +122,20 @@
       "videos": [
         {
           "id": "v11",
-          "title": "Python 基礎",
+          "title": "Python Basics",
           "url": "https://www.youtube.com/embed/sample11"
         },
         {
           "id": "v12",
-          "title": "資料結構",
+          "title": "Data Structures",
           "url": "https://www.youtube.com/embed/sample12"
         }
       ]
     },
-    {
-      "id": "7",
-      "title": "演算法與資料結構實作",
-      "description": "學習常見演算法與資料結構，強化程式設計能力。",
+    "algorithms-data-structures": {
+      "title": "Algorithms and Data Structures in Practice",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course07.jpg?alt=media&token=74465216-bc05-4e17-a878-b6a0cbcf79d5",
+      "description": "Learn common algorithms and data structures to enhance programming skills.",
       "category": {
         "id": "c2",
         "name": "程式語言類"
@@ -144,20 +144,20 @@
       "videos": [
         {
           "id": "v13",
-          "title": "排序演算法",
+          "title": "Sorting Algorithms",
           "url": "https://www.youtube.com/embed/sample13"
         },
         {
           "id": "v14",
-          "title": "樹與圖",
+          "title": "Trees and Graphs",
           "url": "https://www.youtube.com/embed/sample14"
         }
       ]
     },
-    {
-      "id": "8",
-      "title": "股市投資入門",
-      "description": "理解股市運作機制，掌握基礎投資策略與風險控管。",
+    "stock-investment-intro": {
+      "title": "Introduction to Stock Market Investment",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course08.jpg?alt=media&token=0ccaa8c5-eafb-4efb-a1e1-f758fe054ea8",
+      "description": "Understand how the stock market operates and learn basic investment strategies and risk control.",
       "category": {
         "id": "c3",
         "name": "投資理財類"
@@ -166,20 +166,20 @@
       "videos": [
         {
           "id": "v15",
-          "title": "股市基礎",
+          "title": "Stock Market Basics",
           "url": "https://www.youtube.com/embed/sample15"
         },
         {
           "id": "v16",
-          "title": "投資組合管理",
+          "title": "Portfolio Management",
           "url": "https://www.youtube.com/embed/sample16"
         }
       ]
     },
-    {
-      "id": "9",
-      "title": "基金與理財規劃",
-      "description": "學習基金種類及理財規劃技巧，提升資產增值能力。",
+    "funds-financial-planning": {
+      "title": "Funds and Financial Planning",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/course09.jpg?alt=media&token=a247ade2-d30f-4e89-a87b-798ed70f5beb",
+      "description": "Learn types of funds and techniques for financial planning to grow your assets.",
       "category": {
         "id": "c3",
         "name": "投資理財類"
@@ -188,20 +188,20 @@
       "videos": [
         {
           "id": "v17",
-          "title": "基金介紹",
+          "title": "Introduction to Funds",
           "url": "https://www.youtube.com/embed/sample17"
         },
         {
           "id": "v18",
-          "title": "理財規劃",
+          "title": "Financial Planning",
           "url": "https://www.youtube.com/embed/sample18"
         }
       ]
     },
-    {
-      "id": "10",
-      "title": "攝影構圖與光影技巧",
-      "description": "學習攝影的基本構圖、曝光與打光技巧，提升照片質感。",
+    "photography-composition-light": {
+      "title": "Photography Composition and Lighting Techniques",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-hikaique-243757.jpg?alt=media&token=0adeecac-e19d-401d-abf7-fe571da376d1",
+      "description": "Learn basic composition, exposure, and lighting techniques to enhance photo quality.",
       "category": {
         "id": "c4",
         "name": "藝術人文類"
@@ -210,24 +210,21 @@
       "videos": [
         {
           "id": "v19",
-          "title": "構圖原則",
+          "title": "Composition Principles",
           "url": "https://www.youtube.com/embed/sample19"
         },
         {
           "id": "v20",
-          "title": "光線運用",
+          "title": "Lighting Techniques",
           "url": "https://www.youtube.com/embed/sample20"
         }
       ]
     },
-    {
-      "id": "11",
-      "title": "數位插畫設計入門",
-      "description": "從零開始學會使用繪圖軟體創作自己的插畫作品。",
-      "category": {
-        "id": "c4",
-        "name": "藝術人文類"
-      },
+    "digital-illustration-basics": {
+      "title": "Digital Illustration Basics",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-pixabay-301792.jpg?alt=media&token=5ee74fc1-df2e-4b77-9a71-cd988032e841",
+      "description": "Learn to use drawing software from scratch to create your own illustration works.",
+      "category": { "id": "c4", "name": "藝術人文類" },
       "instructorId": "a7",
       "videos": [
         {
@@ -242,14 +239,11 @@
         }
       ]
     },
-    {
-      "id": "12",
-      "title": "日常花藝設計",
-      "description": "學習插花技巧與配色美學，打造屬於自己的桌上花園。",
-      "category": {
-        "id": "c4",
-        "name": "藝術人文類"
-      },
+    "everyday-flower-arrangement": {
+      "title": "Everyday Flower Arrangement",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-browne-and-dixon-photography-945924617-20091881.jpg?alt=media&token=051fc5e0-5eac-4fbb-9815-b2dd6fcd6667",
+      "description": "Learn floral arrangement skills and color aesthetics to create your own tabletop garden.",
+      "category": { "id": "c4", "name": "藝術人文類" },
       "instructorId": "a8",
       "videos": [
         {
@@ -264,14 +258,11 @@
         }
       ]
     },
-    {
-      "id": "13",
-      "title": "素描基礎技巧",
-      "description": "從線條到陰影，掌握素描基本功與形體觀察。",
-      "category": {
-        "id": "c4",
-        "name": "藝術人文類"
-      },
+    "sketching-fundamentals": {
+      "title": "Sketching Fundamentals",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-craytive-1478477.jpg?alt=media&token=b56bbd60-360f-4faf-99aa-b334cc29bc7d",
+      "description": "Master basic sketching skills from lines to shadows and improve object observation.",
+      "category": { "id": "c4", "name": "藝術人文類" },
       "instructorId": "a9",
       "videos": [
         {
@@ -286,14 +277,11 @@
         }
       ]
     },
-    {
-      "id": "14",
-      "title": "電腦繪圖設計入門",
-      "description": "學會使用電繪軟體如 Photoshop 或 Procreate 進行圖像創作。",
-      "category": {
-        "id": "c4",
-        "name": "藝術人文類"
-      },
+    "digital-painting-intro": {
+      "title": "Introduction to Digital Painting",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-cottonbro-8072293.jpg?alt=media&token=3de89c0b-5f44-47f3-9400-0b21c38619cd",
+      "description": "Learn how to use software like Photoshop or Procreate to create digital art.",
+      "category": { "id": "c4", "name": "藝術人文類" },
       "instructorId": "a7",
       "videos": [
         {
@@ -308,14 +296,11 @@
         }
       ]
     },
-    {
-      "id": "15",
-      "title": "油畫初探：色彩與技法",
-      "description": "探索油畫顏料的使用與經典畫風的基礎技法。",
-      "category": {
-        "id": "c4",
-        "name": "藝術人文類"
-      },
+    "oil-painting-techniques": {
+      "title": "Oil Painting Techniques: Color and Style",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-daiangan-102127.jpg?alt=media&token=624e5767-53ea-4621-a4b0-53cab12c0849",
+      "description": "Explore how to use oil paints and learn the basic techniques of classic styles.",
+      "category": { "id": "c4", "name": "藝術人文類" },
       "instructorId": "a9",
       "videos": [
         {
@@ -330,14 +315,11 @@
         }
       ]
     },
-    {
-      "id": "16",
-      "title": "法文基礎發音與日常會話",
-      "description": "掌握法文字母發音與常用生活對話，打好語言基礎。",
-      "category": {
-        "id": "c5",
-        "name": "語言學習類"
-      },
+    "french-pronunciation-conversation": {
+      "title": "French Pronunciation and Daily Conversation",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-atypeek-5781917.jpg?alt=media&token=116559a6-0c31-4f83-9bd9-7cc7ae47b2db",
+      "description": "Master French alphabet pronunciation and daily expressions to build a solid language foundation.",
+      "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a10",
       "videos": [
         {
@@ -352,10 +334,10 @@
         }
       ]
     },
-    {
-      "id": "17",
-      "title": "韓文入門：字母與基本句型",
-      "description": "學習韓文字母與常見句型，開啟韓語學習之旅。",
+    "korean-alphabet-basic-sentences": {
+      "title": "Korean Basics: Alphabet and Sentences",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-pixabay-373290.jpg?alt=media&token=27f61754-1656-458f-9580-46ea73532ce4",
+      "description": "Learn Hangul and common sentence structures to start your Korean learning journey.",
       "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a11",
       "videos": [
@@ -371,10 +353,10 @@
         }
       ]
     },
-    {
-      "id": "18",
-      "title": "日文五十音與旅遊會話",
-      "description": "快速掌握日文五十音與常見旅遊用語。",
+    "japanese-hiragana-travel": {
+      "title": "Japanese Hiragana and Travel Phrases",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-bagus41-1440476.jpg?alt=media&token=cc8c15f0-5203-4f6a-9957-bc3545c4f1c7",
+      "description": "Quickly grasp the Japanese hiragana system and essential travel expressions.",
       "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a12",
       "videos": [
@@ -390,10 +372,10 @@
         }
       ]
     },
-    {
-      "id": "19",
-      "title": "義大利語初級文法",
-      "description": "從基本文法開始，建立義大利語閱讀與造句能力。",
+    "italian-grammar-basics": {
+      "title": "Italian Grammar Basics",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-marvz-etcoban-3367353-5039219.jpg?alt=media&token=32a5267d-c0c3-40e0-b4d3-88e91d39ea3b",
+      "description": "Start from basic grammar to build Italian reading and sentence-making skills.",
       "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a13",
       "videos": [
@@ -409,10 +391,10 @@
         }
       ]
     },
-    {
-      "id": "20",
-      "title": "法語進階會話練習",
-      "description": "透過情境模擬與聽力訓練，提升法語口語能力。",
+    "french-conversation-advanced": {
+      "title": "Advanced French Conversation Practice",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-pixabay-532826.jpg?alt=media&token=5ad7f65f-66fc-41a3-80ee-9e1d25394be6",
+      "description": "Enhance your French speaking skills through scenario simulation and listening exercises.",
       "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a10",
       "videos": [
@@ -428,10 +410,11 @@
         }
       ]
     },
-    {
-      "id": "21",
-      "title": "日韓文化與語言比較",
-      "description": "透過文化背景理解語言差異，提升跨文化溝通能力。",
+
+    "japanese-korean-culture-language": {
+      "title": "Japanese and Korean Culture and Language Comparison",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-enginakyurt-1498273.jpg?alt=media&token=494a32e4-70a8-4c70-b0ef-3315a1bd3355",
+      "description": "Understand language differences through cultural backgrounds to enhance cross-cultural communication skills.",
       "category": { "id": "c5", "name": "語言學習類" },
       "instructorId": "a11",
       "videos": [
@@ -447,10 +430,10 @@
         }
       ]
     },
-    {
-      "id": "22",
-      "title": "數據分析在行銷中的應用",
-      "description": "學習如何透過數據洞察來優化行銷決策。",
+    "data-analysis-in-marketing": {
+      "title": "Data Analysis in Marketing",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-serpstat-177219-572056.jpg?alt=media&token=3d01e334-3d66-44c4-8858-08460030e4ec",
+      "description": "Learn how to use data insights to optimize marketing decisions.",
       "category": { "id": "c1", "name": "數位行銷類" },
       "instructorId": "a14",
       "videos": [
@@ -466,10 +449,10 @@
         }
       ]
     },
-    {
-      "id": "23",
-      "title": "電子報與行銷自動化",
-      "description": "了解如何設計有效的電子報與自動行銷流程。",
+    "email-marketing-automation": {
+      "title": "Email Marketing and Automation",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-rdne-7821760.jpg?alt=media&token=9a915aed-7246-459b-8d80-e8fdb2ec0eb7",
+      "description": "Understand how to design effective newsletters and set up automated marketing flows.",
       "category": { "id": "c1", "name": "數位行銷類" },
       "instructorId": "a1",
       "videos": [
@@ -485,10 +468,10 @@
         }
       ]
     },
-    {
-      "id": "24",
-      "title": "社群內容企劃與短影音製作",
-      "description": "學習如何製作吸睛短影片並提升社群參與度。",
+    "social-content-short-video": {
+      "title": "Social Media Content Planning and Short Video Production",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-ivan-samkov-7676828.jpg?alt=media&token=5736e89f-dd88-485b-958c-111c09bdea56",
+      "description": "Learn to create eye-catching short videos to boost engagement on social platforms.",
       "category": { "id": "c1", "name": "數位行銷類" },
       "instructorId": "a3",
       "videos": [
@@ -504,10 +487,10 @@
         }
       ]
     },
-    {
-      "id": "25",
-      "title": "前端框架 Vue.js 入門",
-      "description": "學習 Vue 基本概念與實作，適合初學者快速上手。",
+    "vuejs-frontend-basics": {
+      "title": "Vue.js Frontend Framework Basics",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/11.jpg?alt=media&token=28f81f23-064a-4a72-8f67-6b0e71e0279e",
+      "description": "Learn Vue fundamentals and hands-on implementation, perfect for beginners.",
       "category": { "id": "c2", "name": "程式語言類" },
       "instructorId": "a2",
       "videos": [
@@ -523,10 +506,10 @@
         }
       ]
     },
-    {
-      "id": "26",
-      "title": "Git 與版本控制實務",
-      "description": "學會 Git 基本操作與多人協作流程，提升開發效率。",
+    "git-version-control": {
+      "title": "Git and Practical Version Control",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/git.png?alt=media&token=e7f6cc7a-6a34-4a54-9ac8-df5a5d22a8f4",
+      "description": "Master Git basics and team collaboration to improve development efficiency.",
       "category": { "id": "c2", "name": "程式語言類" },
       "instructorId": "a2",
       "videos": [
@@ -542,10 +525,10 @@
         }
       ]
     },
-    {
-      "id": "27",
-      "title": "Python 資料視覺化入門",
-      "description": "使用 Python 工具繪製數據圖表與視覺化報告。",
+    "python-data-visualization": {
+      "title": "Introduction to Python Data Visualization",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/python-logo.png?alt=media&token=89805b04-778d-43e5-a37a-ec4401938590",
+      "description": "Use Python tools to create data charts and visual reports.",
       "category": { "id": "c2", "name": "程式語言類" },
       "instructorId": "a4",
       "videos": [
@@ -561,10 +544,10 @@
         }
       ]
     },
-    {
-      "id": "28",
-      "title": "ETF 投資策略入門",
-      "description": "了解 ETF 運作與投資組合配置，適合長期投資者。",
+    "etf-investment-strategy": {
+      "title": "Introduction to ETF Investment Strategies",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-tima-miroshnichenko-7567230.jpg?alt=media&token=fbe33d3d-3df2-427c-8c10-5001c3254a4d",
+      "description": "Understand how ETFs work and how to build diversified portfolios for long-term investment.",
       "category": { "id": "c3", "name": "投資理財類" },
       "instructorId": "a15",
       "videos": [
@@ -580,10 +563,10 @@
         }
       ]
     },
-    {
-      "id": "29",
-      "title": "退休理財與風險管理",
-      "description": "規劃未來財務生活，掌握穩健的退休儲備策略。",
+    "retirement-financial-planning": {
+      "title": "Retirement Financial Planning and Risk Management",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-olly-3783255.jpg?alt=media&token=e8db57c0-ab21-4bc8-b145-97d7a2eaf9ed",
+      "description": "Plan your future finances and master effective retirement saving strategies.",
       "category": { "id": "c3", "name": "投資理財類" },
       "instructorId": "a15",
       "videos": [
@@ -599,10 +582,10 @@
         }
       ]
     },
-    {
-      "id": "30",
-      "title": "小資族理財實戰課",
-      "description": "針對收入有限者的理財策略與資金管理技巧。",
+    "personal-finance-on-budget": {
+      "title": "Personal Finance for Budget-Conscious Individuals",
+      "imgURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/pexels-alesiakozik-6772103.jpg?alt=media&token=09d46fc5-4d47-426a-b24d-12cfe617d56f",
+      "description": "Finance strategies and money management tips for people with limited income.",
       "category": { "id": "c3", "name": "投資理財類" },
       "instructorId": "a5",
       "videos": [
@@ -618,5 +601,5 @@
         }
       ]
     }
-  ]
+  }
 }
