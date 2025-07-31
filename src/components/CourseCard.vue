@@ -11,7 +11,7 @@
       <div class="p-4">
         <h2 class="text-lg font-semibold mb-1">{{ course.title }}</h2>
         <p class="text-sm text-gray-600 mb-3">{{ course.description }}</p>
-        <p class="text-sm text-gray-500 mb-3">
+        <p v-if="course.instructor?.name" class="text-sm text-gray-500">
           by {{ course.instructor.name }}
         </p>
         <div class="flex items-center text-sm text-gray-500 space-x-4 mb-4">
