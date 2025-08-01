@@ -1,79 +1,92 @@
 {
-  "instructors": {
-    "a1": {
-      "id": "a1",
-      "name": "Amy",
-      "bio": "數位行銷專家，擁有 8 年實戰經驗，擅長社群行銷與品牌經營。"
-    },
-    "a2": {
-      "id": "a2",
-      "name": "Benjamin",
-      "bio": "資深軟體工程師，專精 JavaScript 與後端開發。"
-    },
-    "a3": {
-      "id": "a3",
-      "name": "Catherine",
-      "bio": "數位行銷顧問，精通 SEO 與內容行銷策略。"
-    },
-    "a4": {
-      "id": "a4",
-      "name": "Darren",
-      "bio": "程式語言講師，熟悉多種語言與演算法設計。"
-    },
-    "a5": {
-      "id": "a5",
-      "name": "Ethan",
-      "bio": "投資理財專家，擁有多年股市與基金操作經驗。"
-    },
-    "a6": {
-      "id": "a6",
-      "name": "Fiona",
-      "bio": "專業攝影師，擅長人像與風景攝影，具有豐富教學經驗。"
-    },
-    "a7": {
-      "id": "a7",
-      "name": "George",
-      "bio": "藝術插畫師，專精數位繪圖與視覺設計。"
-    },
-    "a8": {
-      "id": "a8",
-      "name": "Hannah",
-      "bio": "花藝設計師，熱愛自然與創作，經營個人花藝工作室。"
-    },
-    "a9": {
-      "id": "a9",
-      "name": "Isaac",
-      "bio": "素描與油畫藝術家，擅長經典技法教學與創作指導。"
-    },
-    "a10": {
-      "id": "a10",
-      "name": "Jenny",
-      "bio": "資深法文講師，具有留法背景與教學熱情。"
-    },
-    "a11": {
-      "id": "a11",
-      "name": "Kevin",
-      "bio": "韓語老師，曾任職於多家語言機構，教學活潑有趣。"
-    },
-    "a12": {
-      "id": "a12",
-      "name": "Linda",
-      "bio": "日語教師，曾在日本生活多年，熟悉語言與文化。"
-    },
-    "a13": {
-      "id": "a13",
-      "name": "Michael",
-      "bio": "義大利語講師，熟悉歐洲語言學習策略與教學方法。"
-    },
-    "a14": {
-      "id": "a14",
-      "name": "Nina",
-      "bio": "行銷分析師，專注於數據驅動的廣告策略與優化。"
-    },
-    "a15": {
-      "id": "a15",
-      "name": "Oscar",
-      "bio": "資深財經顧問，專精資產配置與退休理財規劃。"
-    }
+  "amy-edmondson": {
+    "id": "amy-edmondson",
+    "name": "Amy Edmondson",
+    "bio": "A digital marketing expert with 8 years of hands-on experience specializing in social media and brand strategy.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20125950.png?alt=media&token=a26f4c0a-cc8b-41b9-b42f-3c2ecde1ee0e"
+  },
+  "benjamin-jackson": {
+    "id": "benjamin-jackson",
+    "name": "Benjamin Jackson",
+    "bio": "A senior software engineer proficient in JavaScript and backend development.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20125532.png?alt=media&token=58258798-7409-4f11-9fcb-69480ff25279"
+  },
+  "catherine-morgan": {
+    "id": "catherine-morgan",
+    "name": "Catherine Morgan",
+    "bio": "A digital marketing consultant with expertise in SEO and content strategy.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20125708.png?alt=media&token=4c0e994e-2b8a-4855-ab5e-3341b5082a4c"
+  },
+  "darren-taylor": {
+    "id": "darren-taylor",
+    "name": "Darren Taylor",
+    "bio": "A programming instructor experienced in multiple languages and algorithm design.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130513.png?alt=media&token=37dcd628-8ae7-46a2-a32a-2b3329990288"
+  },
+  "ethan-brooks": {
+    "id": "ethan-brooks",
+    "name": "Ethan Brooks",
+    "bio": "An investment and financial planning expert with extensive experience in stock and fund markets.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20131017.png?alt=media&token=02d3267e-8871-45dc-8da9-ee7068653a4e"
+  },
+  "fiona-hart": {
+    "id": "fiona-hart",
+    "name": "Fiona Hart",
+    "bio": "A professional photographer specializing in portrait and landscape photography with strong teaching background.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130333.png?alt=media&token=7e700f8c-1c30-4838-9c57-8794fe8b64e4"
+  },
+  "george-cooper": {
+    "id": "george-cooper",
+    "name": "George Cooper",
+    "bio": "A digital illustrator with expertise in visual design and concept art.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20131058.png?alt=media&token=b2342383-d018-4009-bc13-a87554d72a99"
+  },
+  "hannah-reed": {
+    "id": "hannah-reed",
+    "name": "Hannah Reed",
+    "bio": "A floral designer passionate about nature and creativity, running her own floral studio.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130723.png?alt=media&token=8cda3c49-8261-47e1-8f29-a1432a12f9bb"
+  },
+  "Irene-baker": {
+    "id": "irene-baker",
+    "name": "Irene Baker",
+    "bio": "A classical sketch and oil painting artist skilled in traditional techniques and creative coaching.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20131214.png?alt=media&token=cade7b6d-54d7-433f-acf1-8b18aba7bdfb"
+  },
+  "jenny-dupont": {
+    "id": "jenny-dupont",
+    "name": "Jenny Dupont",
+    "bio": "A seasoned French instructor with overseas experience and a passion for teaching.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20125708.png?alt=media&token=29d2d150-6544-4365-9b6a-c0d62fa18067"
+  },
+  "kevin-miller": {
+    "id": "kevin-miller",
+    "name": "Kevin Miller",
+    "bio": "An enthusiastic Korean language teacher formerly at multiple language institutes.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130158.png?alt=media&token=9645b332-4f6b-4678-854f-e5e63bc9885d"
+  },
+  "linda-sanders": {
+    "id": "linda-sanders",
+    "name": "Linda Sanders",
+    "bio": "A Japanese language teacher with years of living experience in Japan, fluent in culture and language.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130019.png?alt=media&token=ee0b0e8f-31ef-4bb2-a95c-87407ced58e9"
+  },
+  "michael-rossi": {
+    "id": "michael-rossi",
+    "name": "Michael Rossi",
+    "bio": "An Italian language instructor with deep knowledge in European language learning strategies.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130844.png?alt=media&token=bafe78b9-a9c3-4b80-a7d8-d19d8bd3e503"
+  },
+  "nicholas-thomas": {
+    "id": "nicholas-thomas",
+    "name": "Nicholas Thomas",
+    "bio": "A marketing analyst focused on data-driven advertising and performance optimization.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20130136.png?alt=media&token=ce9831f2-6cf2-48b8-a40e-a3c8b427eb36"
+  },
+  "oscar-ward": {
+    "id": "oscar-ward",
+    "name": "Oscar Ward",
+    "bio": "A senior financial consultant specializing in asset allocation and retirement planning.",
+    "instructorURL": "https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/Screenshot%202025-07-19%20125618.png?alt=media&token=84f5e7e0-9d59-47a1-b3c4-10620a01a59b"
   }
 }

@@ -3,6 +3,8 @@ import { createPinia } from "pinia";
 // import { makeServer } from "@/mocks/server";
 import router from "./router";
 import App from "./App.vue";
+import "@fortawesome/fontawesome-free/css/all.css";
+
 // import "@/mocks/server";
 
 import "./style.css";
