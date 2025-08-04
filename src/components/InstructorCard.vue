@@ -1,11 +1,11 @@
 <template>
   <div
-    class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition duration-300 w-full max-w-xs"
+    class="group bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-2xl transition duration-300 w-full max-w-xs"
   >
     <img
       :src="instructor.instructorURL"
       :alt="instructor.name"
-      class="w-20 h-20 object-cover rounded-full mx-auto mb-4 border-4 border-blue-100"
+      class="w-20 h-20 object-cover rounded-full mx-auto mb-4 border-4 border-blue-100 group-hover:border-blue-400 transition duration-300"
     />
     <h3 class="text-lg font-semibold">{{ instructor.name }}</h3>
     <p class="text-gray-600 text-sm mb-4 line-clamp-3">
@@ -14,7 +14,7 @@
 
     <div class="flex justify-center space-x-4 text-sm text-gray-600 mb-4">
       <div class="flex items-center space-x-1">
-        <span>💬</span>
+        <span class="fa-solid fa-book"></span>
         <span>{{ instructor.courseCount }}</span>
       </div>
     </div>

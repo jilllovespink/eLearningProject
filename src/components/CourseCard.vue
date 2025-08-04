@@ -1,8 +1,8 @@
 <template>
   <div
-    class="group rounded-xl overflow-hidden shadow-md border hover:shadow-lg transition duration-300 relative bg-white w-full max-w-sm"
+    class="group rounded-xl overflow-hidden shadow-md border hover:shadow-2xl transition duration-300 relative bg-white w-full max-w-sm"
   >
-    <div class="relative  overflow-hidden">
+    <div class="relative overflow-hidden">
       <img
         :src="course.imgURL"
         :alt="course.title"

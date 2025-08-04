@@ -1,23 +1,29 @@
 <template>
-  <section class="py-16 px-4 max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 mb-2">Top-Selling Courses</h2>
-      <p class="text-gray-600 text-lg">
-        Discover our most popular courses chosen by thousands of learners
-      </p>
-    </div>
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          Top-Selling Courses
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          Discover our most popular courses chosen by thousands of learners
+        </p>
+      </div>
 
-    <div
-      v-if="topCourses.length"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
-      <CourseCard
-        v-for="course in topCourses"
-        :key="course.id"
-        :course="course"
-      />
+      <div
+        v-if="topCourses.length"
+        class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <CourseCard
+          v-for="course in topCourses"
+          :key="course.id"
+          :course="course"
+        />
+      </div>
+      <div v-else class="text-center text-gray-500 mt-10 text-lg">
+        Loading...
+      </div>
     </div>
-    <div v-else class="text-center text-gray-500">Loading...</div>
   </section>
 </template>
 
