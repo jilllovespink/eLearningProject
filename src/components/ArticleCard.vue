@@ -1,13 +1,13 @@
 <template>
   <RouterLink
     :to="`/articles/${article.site}`"
-    class="flex bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition"
+    class="group flex bg-white rounded-2xl shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-md"
   >
-    <div class="w-1/3 min-w-[120px] aspect-[4/3]">
+    <div class="w-1/3 min-w-[120px] aspect-[4/3] relative overflow-hidden">
       <img
         :src="article.pictureURL || '/placeholder.jpg'"
         :alt="article.title"
-        class="object-cover w-full h-full"
+        class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
       />
     </div>
 
@@ -21,7 +21,9 @@
         <span>3 min read</span>
       </div>
 
-      <h3 class="text-base font-semibold mb-1 line-clamp-2">
+      <h3
+        class="text-base font-semibold mb-1 line-clamp-2 transition-colors duration-300 group-hover:text-blue-600"
+      >
         {{ article.title }}
       </h3>
       <p class="text-sm text-gray-600 line-clamp-2">

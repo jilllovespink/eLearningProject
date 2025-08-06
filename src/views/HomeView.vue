@@ -6,6 +6,7 @@
       <BestSellingSection />
       <PopularInstructors />
       <HotArticles />
+      <AllCategorySection />
     </main>
   </div>
 </template>
@@ -14,4 +15,5 @@ import BestSellingSection from '@/components/BestSellingSection.vue'
 import HeroCarousel from '@/components/HeroCarousel.vue'
 import PopularInstructors from '@/components/PopularInstructors.vue'
 import HotArticles from '@/components/HotArticles.vue'
+import AllCategorySection from '@/components/AllCategorySection.vue'
 </script>
