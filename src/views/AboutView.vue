@@ -12,14 +12,11 @@
         <h1
           class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4"
         >
-          {{ `HI`}}<br />
-          <span
-            class="text-blue-600"
-            >{{ about.sections.hero?.highlight || 'Digital Future' }}</span
-          >
+          {{ `Education for the`}}<br />
+          <span class="text-blue-600">{{ `Digital Future` }}</span>
         </h1>
         <p class="text-lg text-gray-700">
-          {{ about.sections.hero?.subtext || 'We are on a mission to make high-quality education accessible, engaging, and effective for learners worldwide through innovative technology and human-centered design.' }}
+          {{ `Make high-quality education accessible, engaging, and effective for learners through innovative technology and human-centered design.` }}
         </p>
       </div>
     </section>
@@ -67,33 +64,26 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="bg-white py-12">
-      <div class="container mx-auto px-4 max-w-4xl">
+    <section class="bg-gray-100 py-12">
+      <div class="container mx-auto px-4 max-w-7xl">
         <h2 class="text-3xl font-bold text-gray-900 mb-8">
           {{ about.sections.whyChooseUs.title }}
         </h2>
 
         <swiper
-          :autoplay="{ delay: 3000 }"
-          :slides-per-view="1"
+          :modules="modules"
+          :autoplay="{ delay: 3000, disableOnInteraction: false }"
+          :space-between="24"
+          :loop="true"
+          :breakpoints="{
+        0: { slidesPerView: 1 },       // 手機：一張
+        640: { slidesPerView: 2 },     // 平板：兩張
+        1024: { slidesPerView: 3 }     // 桌機：三張
+      }"
           navigation
           :pagination="{ clickable: true }"
+          class="pb-8"
         >
-          <!-- :breakpoints="{
-      '0': {
-        slidesPerView: 1,
-        spaceBetween: 16,
-      },
-      '768': {
-        slidesPerView: 2,
-        spaceBetween: 24,
-      },
-      '1024': {
-        slidesPerView: 3,
-        spaceBetween: 32,
-      },
-    }" -->
-
           <SwiperSlide
             v-for="(f,i) in about.sections.whyChooseUs.features"
             :key="i"
@@ -112,41 +102,16 @@
     </section>
 
     <!-- Satisfaction Guarantee -->
-    <section class="bg-blue-600 py-16 text-white">
-      <div class="container mx-auto px-6 text-center">
-        <!-- 白色圓形 Icon -->
-        <div class="flex justify-center mb-6">
-          <div class="bg-white p-6 rounded-full">
-            <i
-              class="fa-solid fa-shield-halved fa-beat text-4xl"
-              style="color: #0a57db;"
-            ></i>
-          </div>
-        </div>
-
-        <!-- Title -->
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          {{ about.sections.guarantee.title }}
-        </h2>
-
-        <!-- Content -->
-        <p class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed">
-          {{ about.sections.guarantee.content }}
-        </p>
-
-        <!-- Three Metrics -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(g, i) in guaranteeMetrics" :key="i" class="space-y-1">
-            <div class="text-2xl md:text-3xl font-extrabold">
-              {{ g.value }}
-            </div>
-            <div class="text-sm opacity-80">
-              {{ g.label }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Guarantee
+      v-if="about?.sections?.guarantee"
+      :title="about.sections.guarantee.title"
+      :content="about.sections.guarantee.content"
+      :metrics="[
+        { value: '30 Days', label: 'Money-Back Guarantee' },
+        { value: '24/7',     label: 'Customer Support'    },
+        { value: 'Lifetime', label: 'Course Access'       },
+      ]"
+    />
 
     <section class="relative overflow-hidden">
       <!-- 背景漸層 -->
@@ -188,7 +153,8 @@
 import { ref, onMounted } from 'vue'
 import { getDatabase, ref as dbRef, get } from 'firebase/database'
 import { app } from '@/services/firebase'         // 你的 firebase 初始化檔
-import { SparklesIcon, ShieldCheckIcon } from '@heroicons/vue/24/solid'
+import Guarantee from '@/components/Guarantee.vue'
+
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -204,7 +170,6 @@ onMounted(async () => {
   const db = getDatabase(app)
   const snap = await get(dbRef(db, 'about'))
   if (snap.exists()) {
-    // 直接將整個物件放入 reactive 變數
     about.value = snap.val()
   }
 
