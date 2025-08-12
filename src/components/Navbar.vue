@@ -11,15 +11,13 @@
         />
 
         <!-- Static links -->
-        <router-link to="/promotions" class="text-sm hover:text-blue-600"
-          >Recommended Courses</router-link
-        >
+
         <router-link to="/courses/" class="text-sm hover:text-blue-600"
           >All Courses</router-link
         >
-        <router-link to="/articles" class="text-sm hover:text-blue-600"
+        <!-- <router-link to="/articles" class="text-sm hover:text-blue-600"
           >Blog Articles</router-link
-        >
+        > -->
         <router-link to="/about" class="text-sm hover:text-blue-600"
           >About Us</router-link
         >

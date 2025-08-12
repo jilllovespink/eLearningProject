@@ -93,6 +93,15 @@
         </div>
       </div>
     </section>
+    <Guarantee
+      :title="guaranteeTitle"
+      :content="guaranteeContent"
+      :metrics="[
+        { value: '30 Days', label: 'Money-Back Guarantee' },
+        { value: '24/7',     label: 'Customer Support'    },
+        { value: 'Lifetime', label: 'Course Access'       },
+      ]"
+    />
   </div>
 </template>
 
@@ -104,8 +113,15 @@ import CourseCard from '@/components/CourseCard.vue'
 
 import { getApp } from 'firebase/app'
 import { getDatabase, ref as dbRef, child, get } from 'firebase/database'
-const app = getApp()               // 你已在別處 initializeApp(...)
+
+const app = getApp()
 const database = getDatabase(app)  // 從既有 app 取得 RTDB
+
+import Guarantee from '@/components/Guarantee.vue'
+
+const guaranteeTitle = '30-Day Money-Back Guarantee'
+const guaranteeContent = 'Enroll with confidence. If the course isn’t right for you, get a full refund within 30 days.'
+
 
 /* Header 文案（原 CoursesHeader 的 props） */
 const headerTitle = 'Browse All Courses'
