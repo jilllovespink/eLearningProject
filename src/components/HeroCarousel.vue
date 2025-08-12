@@ -6,7 +6,7 @@
       :autoplay="{ delay: 3000 }"
       :pagination="{ clickable: true }"
       :modules="[Autoplay, Pagination]"
-      class="h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden"
+      class="h-[300px] md:h-[350px] lg:h-[450px] overflow-hidden"
     >
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
         <div
