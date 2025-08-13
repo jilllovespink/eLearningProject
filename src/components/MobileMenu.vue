@@ -5,32 +5,19 @@
   >
     <nav class="flex flex-col space-y-3 text-gray-800 text-base">
       <router-link
-        to="/promotions"
-        class="block px-4 py-2 rounded hover:bg-gray-100 transition
-"
-        @click="$emit('close')"
-        >課程套裝</router-link
-      >
-      <router-link
         to="/courses/"
         class="block px-4 py-2 rounded hover:bg-gray-100 transition
 "
         @click="$emit('close')"
-        >所有課程</router-link
+        >All Courses</router-link
       >
-      <router-link
-        to="/articles"
-        class="block px-4 py-2 rounded hover:bg-gray-100 transition
-"
-        @click="$emit('close')"
-        >部落格</router-link
-      >
+
       <router-link
         to="/about"
         class="block px-4 py-2 rounded hover:bg-gray-100 transition
 "
         @click="$emit('close')"
-        >關於我們</router-link
+        >About Us</router-link
       >
     </nav>
   </div>

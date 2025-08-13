@@ -9,6 +9,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { database } from "@/services/firebase";
+import { ref as dbRef, get } from "firebase/database";
 
 const instructor = ref(null);
 const route = useRoute();
@@ -17,9 +19,12 @@ onMounted(async () => {
   const id = route.params.id;
 
   try {
-  const res = await fetch(`/api/instructors/${id}`);
-  const data = await res.json();
-  instructor.value = data.instructor;
+  const instructorSnap = await get(dbRef(database, `instructors/${id}`));
+    if (instructorSnap.exists()) {
+      instructor.value = instructorSnap.val();
+    } else {
+      console.warn("找不到講師資料");
+    }
   } catch(error){
         console.error("讀取講師資料失敗", error);
   }

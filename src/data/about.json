@@ -1,0 +1,56 @@
+{
+  "pageTitle": "About Us | Empower Your Learning Journey Online",
+  "sections": {
+    "whoWeAre": {
+      "title": "Who We Are",
+      "content": "Welcome to Learning @, your go-to online learning platform dedicated to helping learners upgrade their skills and achieve real-world success. Founded by a passionate team of educators, developers, and marketers, we believe in accessible, practical, and engaging education—anytime, anywhere.",
+      "highlight": "Empowering minds through knowledge—one course at a time."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "At Learning @, our mission is simple: To make high-quality, skills-focused education affordable and accessible to everyone. We strive to bridge the gap between traditional education and real-world application by offering practical online courses that align with today's fast-changing job market."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "features": [
+        {
+          "icon": "fa-solid fa-chalkboard-user",
+          "title": "Expert-Led Courses",
+          "description": "Our instructors are industry professionals with years of experience. Learn directly from those who’ve done it, not just studied it."
+        },
+        {
+          "icon": "fa-solid fa-laptop-code",
+          "title": "Real-World Projects",
+          "description": "Each course includes hands-on assignments and case studies, allowing you to build a portfolio that proves your skills."
+        },
+        {
+          "icon": "fa-solid fa-brain",
+          "title": "Learner-Centered Design",
+          "description": "Courses are structured for easy navigation, flexible learning, and maximum retention—whether you're on desktop or mobile."
+        },
+        {
+          "icon": "fa-solid fa-globe",
+          "title": "Anytime, Anywhere Access",
+          "description": "All content is available on-demand. Learn at your own pace, from anywhere in the world."
+        },
+        {
+          "icon": "fa-solid fa-lock",
+          "title": "Secure and Private",
+          "description": "We prioritize user data protection with modern encryption standards and secure payment systems."
+        }
+      ]
+    },
+    "guarantee": {
+      "title": "100% Satisfaction Guarantee",
+      "content": "We stand by the quality of our content. That’s why we offer a 30-Day Money-Back Guarantee. If you're not completely satisfied with your course, request a full refund—no questions asked. We want you to learn confidently, knowing your investment is protected."
+    },
+    "community": {
+      "title": "Join a Community of Lifelong Learners",
+      "content": "Thousands of students trust Learning @ to stay ahead in their careers. Whether you're exploring data science, digital marketing, web development, or creative skills, there's a course for you here."
+    },
+    "cta": {
+      "title": "Let’s Build Your Future, Together",
+      "content": "Start learning today and unlock your full potential. Explore our courses, connect with our instructors, and become part of a community that values growth, curiosity, and transformation."
+    }
+  }
+}

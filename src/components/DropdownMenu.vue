@@ -5,7 +5,7 @@
     @mouseleave="handleMouseLeave"
   >
     <button
-      class="text-sm font-medium hover:text-biue-600 px-2 py-1 rounded transition-colors"
+      class="text-sm font-medium hover:text-blue-600 px-10 py-1 rounded transition-colors"
       @click="!isDesktop && (show = !show)"
     >
       {{ label }} ▼
@@ -14,14 +14,14 @@
     <div
       v-if="show"
       ref="dropdownRef"
-      class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 min-w-[180px] z-50"
+      class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-4 min-w-[180px] z-50"
     >
       <ul>
         <li
           v-for="item in items"
           :key="item.id"
           @click="handleClick(item)"
-          class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded cursor-pointer"
+          class="px-10 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded cursor-pointer whitespace-nowrap"
         >
           {{ item.name }}
         </li>
@@ -31,17 +31,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref as vueRef, onMounted, onBeforeUnmount } from 'vue'
+import { database } from '@/services/firebase'
+import { get, ref as dbRef } from 'firebase/database'
+
+const items = vueRef([])
+const show = vueRef(false)
+const isDesktop = vueRef(true)
+const dropdownRef = vueRef(null)
 
 const props = defineProps({
   label: String,             // 選單標題，例如「探索課程」
-  items: Array,              // 要顯示的選項，格式：[{ id, name }]
   onItemClick: Function      // 點擊選項後的處理函式
 })
-
-const show = ref(false)
-const isDesktop = ref(true)
-const dropdownRef = ref(null)
 
 let hideTimeout = null  // 延遲關閉用的 timeout ID
 
@@ -80,10 +82,24 @@ function handleMouseLeave() {
 }
 
 
-onMounted(() => {
+onMounted(async () => {
   updateDeviceType()
   window.addEventListener('resize', updateDeviceType)
   document.addEventListener('click', handleClickOutside)
+
+
+try {
+    const snapshot = await get(dbRef(database, 'categories'))
+    if (snapshot.exists()) {
+      const data = snapshot.val()
+      items.value = Object.entries(data).map(([id, value]) => ({
+        id,
+        name: value.name
+      }))
+    }
+  } catch (err) {
+    console.error('無法讀取 categories:', err)
+  }
 })
 
 onBeforeUnmount(() => {
