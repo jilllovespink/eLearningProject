@@ -1,30 +1,32 @@
 <template>
   <form @submit.prevent="submitForm" class="space-y-4">
+    <!-- Email -->
     <input
       v-model="email"
       type="email"
       placeholder="Email"
       class="w-full px-4 py-2 rounded-md border"
+      @blur="emailBlur"
     />
-    <p v-if="emailError" class="text-red-500 text-sm">{{ emailError }}</p>
-
-    <p v-if="emailMeta.touched && emailError" class="text-red-500 text-sm">
-      {{ emailError }}
-    </p>
     <p
-      v-if="passwordMeta.touched && passwordError"
+      v-if="(emailMeta.touched || submitCount > 0) && emailError"
       class="text-red-500 text-sm"
     >
-      {{ passwordError }}
+      {{ emailError }}
     </p>
 
+    <!-- Password -->
     <input
       v-model="password"
       type="password"
-      placeholder="密碼"
+      placeholder="password"
       class="w-full px-4 py-2 rounded-md border"
+      @blur="passwordBlur"
     />
-    <p v-if="passwordError" class="text-red-500 text-sm">
+    <p
+      v-if="(passwordMeta.touched || submitCount > 0) && passwordError"
+      class="text-red-500 text-sm"
+    >
       {{ passwordError }}
     </p>
 
@@ -32,39 +34,47 @@
       type="submit"
       class="w-full bg-blue-600 text-white font-bold py-2 rounded-md hover:bg-blue-700"
     >
-      登入
+      Login
     </button>
   </form>
 </template>
 
 <script setup>
 import { useForm, useField } from 'vee-validate'
-
 import * as yup from 'yup'
 
 const schema = yup.object({
-  email: yup.string().email('請輸入有效的 Email').required('Email 為必填'),
+  email: yup.string().email('Please enter a valid Email').required('Email is required'),
   password: yup
     .string()
-    .required('密碼為必填')
-    .min(6, '密碼至少 6 碼')
-    .max(15, '密碼最多 15 碼')
-    .matches(/^[a-zA-Z0-9]+$/, '只能包含大小寫英文字母與數字'),
+    .required('Password is required')
+    .min(6, 'Password must be at least 6 characters')
+    .max(15, 'Password must be at most 15 characters')
+    .matches(/^[a-zA-Z0-9]+$/, 'Only letters and numbers are allowed'),
 })
 
-const { handleSubmit } = useForm({
+const { handleSubmit, submitCount } = useForm({
   validationSchema: schema,
-    validateOnMount: true,
-
+  validateOnMount: false,  // 載入時不要就顯示錯誤
 })
 
-const { value: email, errorMessage: emailError, meta: emailMeta } = useField('email')
-const { value: password, errorMessage: passwordError, meta: passwordMeta } = useField('password')
+const {
+  value: email,
+  errorMessage: emailError,
+  meta: emailMeta,
+  handleBlur: emailBlur,
+} = useField('email')
+
+const {
+  value: password,
+  errorMessage: passwordError,
+  meta: passwordMeta,
+  handleBlur: passwordBlur,
+} = useField('password')
 
 const emit = defineEmits(['submit'])
 
 const submitForm = handleSubmit((formData) => {
-
   emit('submit', formData)
 })
 </script>

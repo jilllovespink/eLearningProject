@@ -106,47 +106,131 @@
 </template>
 
 <script setup>
-
-
 import { ref, computed, watch, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import CourseCard from '@/components/CourseCard.vue'
+import Guarantee from '@/components/Guarantee.vue'
 
 import { getApp } from 'firebase/app'
 import { getDatabase, ref as dbRef, child, get } from 'firebase/database'
 
 const app = getApp()
-const database = getDatabase(app)  // 從既有 app 取得 RTDB
+const database = getDatabase(app)
 
-import Guarantee from '@/components/Guarantee.vue'
-
+/* Header 文案 */
 const guaranteeTitle = '30-Day Money-Back Guarantee'
 const guaranteeContent = 'Enroll with confidence. If the course isn’t right for you, get a full refund within 30 days.'
-
-
-/* Header 文案（原 CoursesHeader 的 props） */
 const headerTitle = 'Browse All Courses'
 const headerSubtitle = 'Discover our most popular courses chosen by thousands of learners.'
+
+/* 路由 */
+const route = useRoute()
+const router = useRouter()
 
 /* 狀態 */
 const loading = ref(true)
 const error = ref('')
 
-/* Firebase 資料（標準化後） */
-const categories = ref([]) // [{ id:'c1', name:'Digital Marketing', icon?, description? }]
-const courses = ref([])    // [{ id:'algorithms-data-structures', title, description, instructorId, categoryId:'c2', categoryName:'...', ... }]
+/* 資料 */
+const categories = ref([]) // [{ id, name, icon?, description? }]
+const courses = ref([])    // [{ id, title, ..., categoryId, categoryName }]
 
 /* 互動 */
-const activeCategory = ref('all')  // 使用 categories 的 id（例如 'c2'）
+const activeCategory = ref('all')
 const searchQuery = ref('')
 
-/* 類別映射（id -> 顯示名稱） */
+/* 先記錄 URL 帶來的預設分類（可能比資料先到） */
+const pendingCategory = ref(
+  typeof route.query.category === 'string' ? route.query.category : 'all'
+)
+
+/* 點分類時也同步更新網址 query（選 all 時移除參數） */
+function setActive(id) {
+  activeCategory.value = id
+  router.replace({
+    query: {
+      ...route.query,
+      category: id === 'all' ? undefined : id
+    }
+  })
+}
+
+/* 當網址的 category 改變時，同步到狀態（支援外部導入） */
+watch(
+  () => route.query.category,
+  (val) => {
+    const next = typeof val === 'string' ? val : 'all'
+    if (next === 'all' || categories.value.some(c => c.id === next)) {
+      activeCategory.value = next
+    }
+  }
+)
+
+/* 單一 onMounted：一次把 courses / categories 都抓好並相互補齊 */
+onMounted(async () => {
+  try {
+    loading.value = true
+    error.value = ''
+
+    const root = dbRef(database)
+    const [coursesSnap, categoriesSnap] = await Promise.all([
+      get(child(root, 'courses')),
+      get(child(root, 'categories'))
+    ])
+
+    // 1) 整理 categories
+    const rawCategories = categoriesSnap.exists() ? categoriesSnap.val() : {}
+    const cats = objectToArrayWithKey(rawCategories).map(c => ({
+      id: c.id ?? c._key,
+      name: c.name ?? String(c.id ?? c._key),
+      icon: c.icon ?? '',
+      description: c.description ?? ''
+    }))
+    categories.value = cats
+
+    // 2) 整理 courses，補上 categoryId 與 categoryName
+    const rawCourses = coursesSnap.exists() ? coursesSnap.val() : {}
+    const courseArr = objectToArrayWithKey(rawCourses)
+    const nameMap = new Map(cats.map(c => [c.id, c.name]))
+
+    const tmpCourses = courseArr.map(item => {
+      const categoryId =
+        item?.category?.id ??
+        item?.categoryId ??
+        (typeof item?.category === 'string' ? item.category : '')
+
+      return {
+        id: item.id ?? item._key,
+        ...item,
+        categoryId,
+        categoryName: nameMap.get(categoryId) || ''
+      }
+    })
+    courses.value = tmpCourses
+
+    // 3) 套用初始化的分類（若有效）；否則清除網址參數
+    const initial = pendingCategory.value
+    if (initial === 'all' || cats.some(c => c.id === initial)) {
+      activeCategory.value = initial
+    } else {
+      router.replace({ query: { ...route.query, category: undefined } })
+    }
+  } catch (e) {
+    console.error(e)
+    error.value = 'Failed to load courses. Please try again later.'
+  } finally {
+    loading.value = false
+  }
+})
+
+/* 類別映射（若之後需要可用） */
 const categoryNameById = computed(() => {
   const map = new Map()
   for (const c of categories.value) map.set(c.id, c.name || c.id)
   return map
 })
 
-/* 類別按鈕（依實際 courses 計數；加上 All） */
+/* 類別按鈕（含 All） */
 const normalizedCategories = computed(() => {
   const counts = new Map()
   for (const course of courses.value) {
@@ -160,25 +244,15 @@ const normalizedCategories = computed(() => {
     total: counts.get(c.id) || 0
   }))
 
-  // 只顯示存在於 courses 的分類（若某分類沒有任何課程，可視需求保留/隱藏）
-  // 這裡選擇保留（即使 0），若你想隱藏，把下面 filter 打開：
-  // const list = categories.value
-  //   .filter(c => (counts.get(c.id) || 0) > 0)
-  //   .map(c => ({ id: c.id, label: c.name || c.id, total: counts.get(c.id) || 0 }))
-
   const totalAll = courses.value.length
   return [{ id: 'all', label: 'All Courses', total: totalAll }, ...list]
 })
-
-function setActive(id) {
-  activeCategory.value = id
-}
 
 /* 分頁 */
 const page = ref(1)
 const perPage = 9
 
-/* 篩選（依分類 id 與關鍵字） */
+/* 篩選（依分類 & 關鍵字） */
 const filtered = computed(() => {
   const q = searchQuery.value.trim().toLowerCase()
   return courses.value.filter(c => {
@@ -209,62 +283,7 @@ const pagedCourses = computed(() => {
 /* 條件變更回到第一頁 */
 watch([activeCategory, searchQuery], () => { page.value = 1 })
 
-/* 讀取 RTDB 資料（/courses 與 /categories） */
-onMounted(async () => {
-  try {
-    loading.value = true
-    error.value = ''
-
-    const root = dbRef(database)
-    const [coursesSnap, categoriesSnap] = await Promise.all([
-      get(child(root, 'courses')),
-      get(child(root, 'categories'))
-    ])
-
-    // 讀 courses：/courses/<slug>
-    const rawCourses = coursesSnap.exists() ? coursesSnap.val() : {}
-    const courseArr = objectToArrayWithKey(rawCourses) // [{ _key, ...course }]
-    // 先把 categoryId 抽出，稍後補上 categoryName
-    let tmpCourses = courseArr.map(item => {
-      const categoryId =
-        item?.category?.id ??
-        item?.categoryId ??
-        (typeof item?.category === 'string' ? item.category : '') // 若是字串
-      return {
-        id: item.id ?? item._key,
-        ...item,
-        categoryId
-      }
-    })
-
-    // 讀 categories：/categories/<id>
-    const rawCategories = categoriesSnap.exists() ? categoriesSnap.val() : {}
-    const cats = objectToArrayWithKey(rawCategories).map(c => ({
-      id: c.id ?? c._key,
-      name: c.name ?? String(c.id ?? c._key),
-      icon: c.icon ?? '',
-      description: c.description ?? ''
-    }))
-
-    categories.value = cats
-
-    // 依 categories map 補每門課的 categoryName（顯示/搜尋）
-    const nameMap = new Map(cats.map(c => [c.id, c.name]))
-    tmpCourses = tmpCourses.map(item => ({
-      ...item,
-      categoryName: nameMap.get(item.categoryId) || ''
-    }))
-
-    courses.value = tmpCourses
-  } catch (e) {
-    console.error(e)
-    error.value = 'Failed to load courses. Please try again later.'
-  } finally {
-    loading.value = false
-  }
-})
-
-/* 工具：把 RTDB 的 object 轉陣列，並保留原 key（有些節點不一定有 id 欄位） */
+/* 工具：把 RTDB object 轉陣列並保留 key */
 function objectToArrayWithKey(obj) {
   if (!obj || typeof obj !== 'object') return []
   return Object.entries(obj).map(([k, v]) => ({ _key: k, ...v }))

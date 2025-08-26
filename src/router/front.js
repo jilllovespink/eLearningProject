@@ -21,18 +21,13 @@ export default [
         component: () => import("@/views/PromotionView.vue"),
       },
       {
-        path: "/search",
-        name: "SearchResults",
-        component: () => import("@/views/SearchResultsView.vue"),
-      },
-      {
         path: "search",
         name: "SearchResults",
         component: () => import("@/views/SearchResultsView.vue"),
       },
       {
         path: "courses",
-        name: "Courses",
+        name: "AllCourses",
         component: () => import("@/views/CoursesView.vue"),
       },
       {

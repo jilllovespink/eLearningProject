@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-xl shadow-md w-80">
-      <h1 class="text-xl font-semibold mb-6 text-center">登入</h1>
+      <h1 class="text-xl font-semibold mb-6 text-center">Login</h1>
 
       <LoginForm @submit="handleLogin" />
 
