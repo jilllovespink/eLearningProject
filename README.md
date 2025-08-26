@@ -28,7 +28,7 @@ It showcases **auth**, **role-based routing**, **mock APIs**, and a clean, respo
 
 ```bash
 # Clone
-git clone https://github.com/your-username/learning-at.git
+git clone https://github.com/jilllovespink/eLearningProject.git
 cd learning-at
 
 # Install
