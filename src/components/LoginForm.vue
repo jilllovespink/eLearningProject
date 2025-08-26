@@ -21,7 +21,7 @@
     <input
       v-model="password"
       type="password"
-      placeholder="密碼"
+      placeholder="password"
       class="w-full px-4 py-2 rounded-md border"
     />
     <p v-if="passwordError" class="text-red-500 text-sm">
@@ -32,7 +32,7 @@
       type="submit"
       class="w-full bg-blue-600 text-white font-bold py-2 rounded-md hover:bg-blue-700"
     >
-      登入
+      Login
     </button>
   </form>
 </template>
@@ -43,13 +43,13 @@ import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
 
 const schema = yup.object({
-  email: yup.string().email('請輸入有效的 Email').required('Email 為必填'),
+  email: yup.string().email('Please enter a valid Email').required('Email is required'),
   password: yup
     .string()
-    .required('密碼為必填')
-    .min(6, '密碼至少 6 碼')
-    .max(15, '密碼最多 15 碼')
-    .matches(/^[a-zA-Z0-9]+$/, '只能包含大小寫英文字母與數字'),
+    .required('Password is required')
+    .min(6, 'Password must be at least 6 characters')
+    .max(15, 'Password must be at most 15 characters')
+    .matches(/^[a-zA-Z0-9]+$/, 'Only letters and numbers are allowed'),
 })
 
 const { handleSubmit } = useForm({

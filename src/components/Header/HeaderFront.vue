@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white shadow sticky top-0 z-50">
+  <header class="bg-[rgb(250,253,255)] shadow sticky top-0 z-50">
     <div
       class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3"
     >
@@ -12,18 +12,20 @@
         <MenuIcon class="w-6 h-6 text-gray-700" />
       </button>
 
-      <!-- Logo -->
-      <router-link to="/" class="text-2xl font-bold text-black">
-        Learning<span class="text-blue-600">@</span>
-      </router-link>
+      <RouterLink to="/" class="shrink-0 flex items-center gap-3">
+        <img
+          class="h-12 w-auto"
+          alt="公司 Logo"
+          src="https://firebasestorage.googleapis.com/v0/b/course-platform-3fe65.firebasestorage.app/o/logo%2FScreenshot%202025-08-08%20143740.png?alt=media&token=89412ffa-1484-4931-b05e-eabf9d1d188d"
+        />
+      </RouterLink>
 
       <!-- Middle group (Discover → Search → links) -->
       <div class="flex-1 hidden md:flex items-center gap-6 min-w-0">
         <!-- Discover Dropdown -->
         <DropdownMenu
           label="Discover"
-          :items="courseCategories"
-          :onItemClick="goToCategory"
+          :onItemClick="(item) => router.push({ name: 'AllCourses', query: { category: item.id } })"
         />
 
         <!-- Search -->
@@ -58,13 +60,8 @@
       <div class="ml-auto flex items-center gap-3">
         <router-link
           to="/login"
-          class="text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 transition"
-          >Login</router-link
-        >
-        <router-link
-          to="/register"
           class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-          >Register</router-link
+          >Login</router-link
         >
       </div>
     </div>
