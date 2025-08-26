@@ -10,7 +10,6 @@ import brandRoutes from "./brand";
 const LoginView = () => import("@/views/LoginView.vue");
 const UnauthorizedView = () => import("@/views/UnauthorizedView.vue");
 const NotFoundView = () => import("@/views/NotFoundView.vue");
-const RegisterView = () => import("@/views/RegisterView.vue");
 
 const routes = [
   {
@@ -24,11 +23,7 @@ const routes = [
     name: "Unauthorized",
     component: UnauthorizedView,
   },
-  {
-    path: "/register",
-    name: "Register",
-    component: RegisterView,
-  },
+
   // 合併各模組路由
   ...frontRoutes,
   ...userRoutes,

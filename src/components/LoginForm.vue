@@ -1,30 +1,32 @@
 <template>
   <form @submit.prevent="submitForm" class="space-y-4">
+    <!-- Email -->
     <input
       v-model="email"
       type="email"
       placeholder="Email"
       class="w-full px-4 py-2 rounded-md border"
+      @blur="emailBlur"
     />
-    <p v-if="emailError" class="text-red-500 text-sm">{{ emailError }}</p>
-
-    <p v-if="emailMeta.touched && emailError" class="text-red-500 text-sm">
-      {{ emailError }}
-    </p>
     <p
-      v-if="passwordMeta.touched && passwordError"
+      v-if="(emailMeta.touched || submitCount > 0) && emailError"
       class="text-red-500 text-sm"
     >
-      {{ passwordError }}
+      {{ emailError }}
     </p>
 
+    <!-- Password -->
     <input
       v-model="password"
       type="password"
       placeholder="password"
       class="w-full px-4 py-2 rounded-md border"
+      @blur="passwordBlur"
     />
-    <p v-if="passwordError" class="text-red-500 text-sm">
+    <p
+      v-if="(passwordMeta.touched || submitCount > 0) && passwordError"
+      class="text-red-500 text-sm"
+    >
       {{ passwordError }}
     </p>
 
@@ -39,7 +41,6 @@
 
 <script setup>
 import { useForm, useField } from 'vee-validate'
-
 import * as yup from 'yup'
 
 const schema = yup.object({
@@ -52,19 +53,28 @@ const schema = yup.object({
     .matches(/^[a-zA-Z0-9]+$/, 'Only letters and numbers are allowed'),
 })
 
-const { handleSubmit } = useForm({
+const { handleSubmit, submitCount } = useForm({
   validationSchema: schema,
-    validateOnMount: true,
-
+  validateOnMount: false,  // 載入時不要就顯示錯誤
 })
 
-const { value: email, errorMessage: emailError, meta: emailMeta } = useField('email')
-const { value: password, errorMessage: passwordError, meta: passwordMeta } = useField('password')
+const {
+  value: email,
+  errorMessage: emailError,
+  meta: emailMeta,
+  handleBlur: emailBlur,
+} = useField('email')
+
+const {
+  value: password,
+  errorMessage: passwordError,
+  meta: passwordMeta,
+  handleBlur: passwordBlur,
+} = useField('password')
 
 const emit = defineEmits(['submit'])
 
 const submitForm = handleSubmit((formData) => {
-
   emit('submit', formData)
 })
 </script>

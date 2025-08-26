@@ -27,8 +27,8 @@
           label="Discover"
           :onItemClick="(item) => router.push({ name: 'AllCourses', query: { category: item.id } })"
         />
-
-        <!-- Search -->
+        <!-- 
+        Search
         <div class="flex-shrink-0 w-full max-w-sm">
           <form @submit.prevent="submitSearch">
             <input
@@ -39,7 +39,7 @@
               placeholder="Search courses, instructors, topics..."
             />
           </form>
-        </div>
+        </div> -->
 
         <!-- Static links -->
         <router-link
